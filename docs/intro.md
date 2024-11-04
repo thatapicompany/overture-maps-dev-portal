@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# Intro
+# What is the Overture Maps Data and Why does it need an API?
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Overture Maps Foundation is a non-profit organization that provides free and open-source maps data to the public. The data is available in various formats, including GeoJSON, Shapefile, and CSV. The data is used by developers, researchers, and other organizations to create maps, analyze data, and build applications.
 
 ## Getting Started
 
