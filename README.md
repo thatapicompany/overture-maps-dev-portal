@@ -1,4 +1,18 @@
-# Website
+# Overture Maps Developer Portal & Documentation
+
+Intended for developers who want to use the Overture Maps API to build applications, making use of the OVerture Maps Foundation datasets.
+
+## Goals
+
+- Provide a clear overview of the Overture Maps API
+- Show the API documentation inline and a link to download the OpenAPI specification
+- Guide developers on how to install the API on their own Infrastructure e.g. a GCP account with free credits
+- Provide examples of how to use the API
+- Provide an interactive demo app showing the API in use
+- Let developers sign up for their own API key to use the Cloud version
+- Link to community and support if they get stuck
+
+## Website
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 

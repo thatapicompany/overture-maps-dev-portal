@@ -9,3 +9,7 @@
   height: 200px;
   width: 200px;
 }
+.featureImage {
+  width: 200px; /* Adjust this width as needed */
+  height: auto; /* Maintain aspect ratio */
+}

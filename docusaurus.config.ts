@@ -5,7 +5,7 @@ import type * as Redocusaurus from 'redocusaurus';
 
 const config: Config = {
   title: 'OpenSource Overture Maps API',
-  tagline: 'Unofficial API for the amazing Overture Maps Foundation datasets',
+  tagline: 'Unofficial API for the phenomenal Overture Maps Foundation datasets',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -94,15 +94,15 @@ const config: Config = {
       items: [
         // Other navbar items
         {
-          to: '/tryitout',
-          label: 'Try It',
+          to: '/demo',
+          label: 'Demo',
           position: 'left',
-        },
+        }/*,
         {
           to: '/embedpage',
           label: 'Embedded Page',
           position: 'left',
-        },
+        }*/,
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
