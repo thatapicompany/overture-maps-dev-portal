@@ -10,7 +10,13 @@ Google hosts the Overture Maps dataset in it's public BigQuery dataset. This all
 
 We can use the Cloud Run service to deploy the API. This allows us to scale the API based on demand and only pay for the resources we use. We can also use the Cloud Build service to automate the deployment process.
 
-In production you should consider using Redis instead of Cloud storage for caching, and migrating the parts of the dataset you need to a private BigQuery dataset or a different database for speed and cost, especially for building shapes
+Results of Queries can be cached in Google Cloud Storage (GCS) to reduce the cost of querying the BigQuery dataset. The cache key (name of file) is an encoded version of the query string. The cache is set to expire by the bucket settings, and can be manually cleared if needed.
+
+Firestore is used to cache metadata about individual entities as repeatably requesting these from BigQuery would be expensive e.g. Building shapes for Places by place.id.
+
+In production you should consider migrating the parts of the dataset you need to a private BigQuery dataset or a different database for speed and cost, especially for building shapes.
+
+![GCP Architecture](OvertureMaps-API-gcp-architecture.png)
 
 ## Setup
 
