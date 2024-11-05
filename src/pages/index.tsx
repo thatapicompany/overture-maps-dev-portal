@@ -42,6 +42,11 @@ export default function Home(): JSX.Element {
       description="Overture Maps API, how to fork it and host it yourself">
       <HomepageHeader />
       <main>
+        <div className="container" style={{ textAlign: 'center', marginTop: '20px' }}>
+          <a href="https://overturemaps.org" target="_blank" rel="noopener noreferrer">
+            Find out more about the Overture Maps Foundation here...
+          </a>
+        </div>
         <HomepageFeatures />
       </main>
     </Layout>

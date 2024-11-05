@@ -4,44 +4,49 @@ sidebar_position: 1
 
 # What is the Overture Maps Data and Why does it need an API?
 
-Overture Maps Foundation is a non-profit organization that provides free and open-source maps data to the public. The data is available in various formats, including GeoJSON, Shapefile, and CSV. The data is used by developers, researchers, and other organizations to create maps, analyze data, and build applications.
+**[Overture Maps Foundation](https://overturemaps.org/)** is a phenomenal non-profit organization that provides free and open-source maps data to the public. It's made available as downloadable data dumps that are easy to query with tools like Athena, and as public datasets inside of BigQuery, Snowflake marketplace.
+
+However, some experience of SQL is needed to access that data expecially to prevent large bills are the datasets are naturally very large, so experience in working with large datasets is needed to prevent running up huge bills.
+
+Enter this Unofficial Overture Maps API - a simple RESTful API that allows you to query the data in a way any web developer can understand, and run it themselves without needing to know how to use Athena or BigQuery in a cost optimized way.
+
+It is available as a Cloud service to test with, and as a self-hosted version that you can run on your own infrastructure.
 
 ## Getting Started
 
-Get started by **creating a new site**.
+Get started by **making API Requests** after **[Trying the Demo](../demo)** and reviewing **[API Documentation](../reference)**.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Or **Deploy to your own infrastructure** with the **[GCP / BigQuery](../category/deploy-to-gcp)**.
 
-### What you'll need
+### Making API requests
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+Make some test requests to the API to see how it works e.g.
 
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
+Download all the US Starbucks locations as a JSON file:
 
 ```bash
-npm init docusaurus@latest my-website classic
+curl -o all-starbucks-us.json -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://overture-maps-api.thatapicompany.com/places'  \
+-d 'country=US'  -d 'brand_name=Starbucks'
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
+Or see 10 Tesco UK Supermarket locations in your terminal:
 
 ```bash
-cd my-website
-npm run start
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://overture-maps-api.thatapicompany.com/places' \
+-d 'country=GB'  -d 'brand_name=Tesco' -d 'limit=10'
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+... and then explore the other **[./places endpoints](./api-endpoints/)** and make API requests for Brands and Categories of places for each Country, or search by latitude and longitude.
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+Then build something cool with the data!
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+### Deploying to your own infrastructure
+
+- [Deploying to Google Cloud Platform](./docs/category/deploy-to-gcp/) - GCP has a $400 free credit for new users and this is enough to run the API and get a feel for how it works.
+- AWS / Athena / Snowflake - Coming soon - please [contact us](mailto:aden@thatapicompany.com) if you would like to help with this.
+
+### Who are we & why did we make it?
+
+We are **[ThatAPICompany](https://thatapicompany.com/)** - a specialist dev Agency helping clients make amazing APIs that get used, and creating public APIs like TheCatAPI.com to help educate the next generation of developers how to use APIs to make amazing things!
+
+We have built this API to make it easier for developer of any skill level to access the Overture Maps data, and to help the Overture Maps Foundation to get more people using their data.

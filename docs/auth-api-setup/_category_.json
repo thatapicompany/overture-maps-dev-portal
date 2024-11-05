@@ -1,8 +1,0 @@
-{
-  "label": "API Key Management",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "Setup the Auth API so you can hand out API Keys to your Users."
-  }
-}

@@ -61,7 +61,7 @@ const config: Config = {
           // Pass it a path to a local OpenAPI YAML file\
           // You can also pass it a OpenAPI spec URL
           {
-            spec: 'https://overture-maps-api.thatapicompany.com/api-docs-json',
+            spec: 'openapi/overture-maps-api-openapi.json',
             route: '/reference',
           },
         ],
@@ -88,8 +88,8 @@ const config: Config = {
     navbar: {
       title: 'Overture Maps API',
       logo: {
-        alt: 'Overture Maps API Logo',
-        src: 'img/cityscape.svg',
+        alt: 'ThatAPICompany Logo',
+        src: 'img/api-sq.png',
       },
       items: [
         // Other navbar items
