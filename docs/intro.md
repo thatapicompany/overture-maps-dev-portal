@@ -16,7 +16,7 @@ It is available as a Cloud service to test with, and as a self-hosted version th
 
 Get started by **making API Requests** after **[Trying the Demo](../demo)** and reviewing **[API Documentation](../reference)**.
 
-Or **Deploy to your own infrastructure** with the **[GCP / BigQuery](../category/deploy-to-gcp)**.
+Or **Deploy to your own infrastructure** with the **[GCP / BigQuery](./deploy-to-gcp)**.
 
 ### Making API requests
 
@@ -36,13 +36,13 @@ curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://overture-maps-api.thatapico
 -d 'country=GB'  -d 'brand_name=Tesco' -d 'limit=10'
 ```
 
-... and then explore the other **[./places endpoints](./api-endpoints/)** and make API requests for Brands and Categories of places for each Country, or search by latitude and longitude.
+... and then explore the other **[./places endpoints](./api-endpoints/places)** and make API requests for Brands and Categories of places for each Country, or search by latitude and longitude.
 
 Then build something cool with the data!
 
 ### Deploying to your own infrastructure
 
-- [Deploying to Google Cloud Platform](./docs/category/deploy-to-gcp/) - GCP has a $400 free credit for new users and this is enough to run the API and get a feel for how it works.
+- [Deploying to Google Cloud Platform](./deploy-to-gcp/) - GCP has a $400 free credit for new users and this is enough to run the API and get a feel for how it works.
 - AWS / Athena / Snowflake - Coming soon - please [contact us](mailto:aden@thatapicompany.com) if you would like to help with this.
 
 ### Who are we & why did we make it?

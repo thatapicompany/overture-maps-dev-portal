@@ -18,10 +18,10 @@ Currently these are:
 
 ### API Roadmap
 
-- [x] **[./Places](./docs/api-endpoints/places)** endpoint for Overture Maps 'Place' Theme
-- [x] **[./Places/Brands](./docs/api-endpoints/places-brands)**  endpoint
-- [x] **[./Places/Categories](./docs/api-endpoints/places-categories)** endpoint
-- [x] **[./Places/Countries](./docs/api-endpoints/places-countries)** endpoint
+- [x] **[./Places](./api-endpoints/places)** endpoint for Overture Maps 'Place' Theme
+- [x] **[./Places/Brands](./api-endpoints/places-brands)**  endpoint
+- [x] **[./Places/Categories](./api-endpoints/places-categories)** endpoint
+- [x] **[./Places/Countries](./api-endpoints/places-countries)** endpoint
 - [ ] /Places/Buildings endpoint - very expensive dataset in BigQuery so will require sharding by country and optimizing
 - [ ] /Addresses endpoint for Overture Maps 'Address' Theme
 - [ ] /Buildings endpoint for Overture Maps 'Building' Theme

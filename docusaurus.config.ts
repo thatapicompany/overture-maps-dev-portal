@@ -94,6 +94,7 @@ const config: Config = {
       items: [
         // Other navbar items
         {
+          sidebarId: 'demo',
           to: '/demo',
           label: 'Demo',
           position: 'left',

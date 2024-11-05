@@ -9,7 +9,7 @@ Allows you to get all the Places in the Overture Maps Database. You can filter b
 
 ## Query Parameters
 
-Consult the [Open API documentation](./reference) for the full list of query parameters that can be used to filter the results. Here are some examples
+Consult the [Open API documentation](/reference) for the full list of query parameters that can be used to filter the results. Here are some examples
 
 
 ### Country

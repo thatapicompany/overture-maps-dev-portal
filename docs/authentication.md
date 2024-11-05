@@ -25,6 +25,6 @@ If you would like to use the API for a commercial project, please [contact us](m
 
 ## Self-Hosted
 
-If you want to run the API on your own infrastructure, you can do so by following the instructions in the [Deploy to GCP](../category/deploy-to-gcp) section.
+If you want to run the API on your own infrastructure, you can do so by following the instructions in the [Deploy to GCP](./deploy-to-gcp) section.
 
-The to give each yof your users API Keys, you can use the [API Key Management](../auth-api-setup) section to create and manage API keys for your users, add rate-limiting, and other security features.
+The to give each yof your users API Keys, you can use the [API Key Management](./api-key-management) section to create and manage API keys for your users, add rate-limiting, and other security features.

@@ -2,7 +2,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 
-function TryItOut() {
+function Demo() {
   return (
     <Layout title="Demo App using the API" description="App that shows how to use the API">
       <div style={{ width: '100%', height: '80vh', border: 'none' }}>
@@ -16,4 +16,4 @@ function TryItOut() {
   );
 }
 
-export default TryItOut
+export default Demo

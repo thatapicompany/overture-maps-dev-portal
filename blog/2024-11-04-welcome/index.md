@@ -12,6 +12,6 @@ This continues our mission to use APIs to make datasets widely available to deve
 
 ![Docusaurus Plushie](./thecatapi-logo.webp)
 
-[https://thecatapi.com](theCatAPI.com)
+[https://thecatapi.com](https://thecatapi.com)
 
 <!-- truncate -->
