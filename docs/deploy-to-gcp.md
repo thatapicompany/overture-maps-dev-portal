@@ -18,16 +18,17 @@ In production you should consider migrating the parts of the dataset you need to
 
 ![GCP Architecture](OvertureMaps-API-gcp-architecture.png)
 
-## Setup
-
-In this guide we will cover the following steps:
+## Setup Steps
 
 - Create GCP Account with free credit
 - Authenticate with GCP
-- Create GCS bucket for cache
+- Create GCS bucket for cache (and set up lifecycle rules to delete old files after X days)
 - Fork github repo
+- Update the API key / Setup TheAuthAPI.com Free account
 - Setup a Service Account with the right permissions
-- Deploy to Cloudrun by connecting to your github repo, and apply env vars, and have it use the service-account
+- Setup Firestore for metadata caching
+- Deploy to CloudRun by connecting to your github repo, and apply env vars, and have it use the service-account
+- Test the new API endpoint
 
 ## API Key management
 
@@ -51,7 +52,7 @@ WHERE ST_DWithin(geometry, ST_GeogPoint(16.3738, 48.2082), 500)
 
 As there is one large table for each theme of data, a simple strategy to reduce costs is to create a new dataset in BigQuery, and copy the tables you need filtering down to just the country you are interested in. Another option would be the shard the tables by country, and then only query the tables you need.
 
-Using a metadata store such as Firebase in Datastore mode - this would allow storing of building geomtries and other data matched to place that is too expensive to query in BigQuery.
+Using a metadata store such as Firebase in Datastore mode - this would allow storing of building geometries and other data matched to place that is too expensive to query in BigQuery.
 
 ### Service Account roles
 
@@ -59,14 +60,14 @@ For a service account in GCP that a Cloud Run instance will use to access BigQue
 
 BigQuery Permissions:
 
-- BigQuery User (roles/bigquery.user): Grants permissions to create and run jobs in BigQuery.
-- BigQuery Data Viewer (roles/bigquery.dataViewer): Allows the service account to view datasets and tables, if it needs access to view data.
-- (Optional) BigQuery Job User (roles/bigquery.jobUser): This role can also be helpful if your queries require advanced job control features, though usually, bigquery.user suffices.
+- `BigQuery User` (roles/bigquery.user): Grants permissions to create and run jobs in BigQuery.
+- `BigQuery Data Viewer` (roles/bigquery.dataViewer): Allows the service account to view datasets and tables, if it needs access to view data.
+- (Optional) `BigQuery Job User` (roles/bigquery.jobUser): This role can also be helpful if your queries require advanced job control features, though usually, bigquery.user suffices.
 
 Google Cloud Storage (GCS) Permissions:
 
-- Storage Object Viewer (roles/storage.objectViewer): Grants read access to objects in the bucket.
-- Storage Object Creator (roles/storage.objectCreator): Grants permission to write files to the bucket, including creating new objects.
+- `Storage Object Viewer` (roles/storage.objectViewer): Grants read access to objects in the bucket.
+- `Storage Object Creator` (roles/storage.objectCreator): Grants permission to write files to the bucket, including creating new objects.
 
 
 ## Billing Alerts
