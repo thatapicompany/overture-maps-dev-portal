@@ -16,20 +16,20 @@ It is available as a Cloud service to test with, and as a self-hosted version th
 
 Get started by **making API Requests** after **[Trying the Demo](../demo)** and reviewing **[API Documentation](../reference)**.
 
-Or **Deploy to your own infrastructure** with the **[GCP / BigQuery](./deploy-to-gcp)**.
+Or **Deploy to your own infrastructure** with the **[GCP / BigQuery](./deploy-to-gcp)** guide.
 
 ### Making API requests
 
 Make some test requests to the API to see how it works e.g.
 
-Download all the US Starbucks locations as a JSON file:
+Download all the US **Starbucks** locations as a JSON file:
 
 ```bash
 curl -o all-starbucks-us.json -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://overture-maps-api.thatapicompany.com/places'  \
 -d 'country=US'  -d 'brand_name=Starbucks'
 ```
 
-Or see 10 Tesco UK Supermarket locations in your terminal:
+Or see 10 **Tesco** UK Supermarket locations in your terminal:
 
 ```bash
 curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://overture-maps-api.thatapicompany.com/places' \
