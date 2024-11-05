@@ -2,3 +2,18 @@ thatapicompany:
   label: ThatAPICompany
   permalink: /thatapicompany
   description: Posts about ThatAPICompany
+
+gcp:
+  label: GCP
+  permalink: /gcp
+  description: Google Cloud Platform
+
+endpoints:
+  label: endpoints
+  permalink: /endpoints
+  description: Posts about API Endpoints
+
+theauthapi:
+  label: theauthapi
+  permalink: /theauthapi
+  description: Posts about TheAuthAPI.com
