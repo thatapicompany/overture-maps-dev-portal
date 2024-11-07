@@ -32,17 +32,12 @@ const config: Config = {
 
   presets: [
     [
-      '@docusaurus/preset-classic',
+      'classic',
       {
         gtag: {
           trackingID: 'GTM-5SGMH8HZ',
           anonymizeIP: true,
         },
-      },
-    ],
-    [
-      'classic',
-      {
         docs: {
           sidebarPath: './sidebars.ts',
         },
