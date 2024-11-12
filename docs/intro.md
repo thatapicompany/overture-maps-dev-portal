@@ -4,13 +4,13 @@ sidebar_position: 1
 
 # What is the Overture Maps Data and Why does it need an API?
 
-**[Overture Maps Foundation](https://overturemaps.org/)** is a phenomenal non-profit organization that provides free and open-source maps data to the public. It's made available as downloadable data dumps that are easy to query with tools like Athena, and as public datasets inside of BigQuery, Snowflake marketplace.
+**[Overture Maps Foundation](https://overturemaps.org/)** is a phenomenal non-profit organization that provides free and open-source maps data to the public. This data is accessible as downloadable data dumps, which can be easily queried with tools like Athena, as well as through public datasets hosted in BigQuery and the Snowflake Marketplace.
 
-However, some experience of SQL is needed to access that data expecially to prevent large bills are the datasets are naturally very large, so experience in working with large datasets is needed to prevent running up huge bills.
+However, working directly with these datasets requires a solid understanding of SQL, especially given their large size. Without careful querying, it's easy to incur high costs due to the extensive data volume. Experience in handling large datasets is essential to manage usage efficiently.
 
-Enter this Unofficial Overture Maps API - a simple RESTful API that allows you to query the data in a way any web developer can understand, and run it themselves without needing to know how to use Athena or BigQuery in a cost optimized way.
+Introducing the Unofficial Overture Maps API — a simple RESTful API designed for web developers to access Overture Maps data without needing to know Athena, BigQuery, or complex cost optimization strategies. This API abstracts the complexity, allowing developers to query the data easily and efficiently.
 
-It is available as a Cloud service to test with, and as a self-hosted version that you can run on your own infrastructure.
+The API is available as a cloud service for testing and exploration. Additionally, a self-hosted version is offered for those who prefer to run it on their own infrastructure.
 
 ## Getting Started
 

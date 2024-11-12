@@ -12,7 +12,7 @@ We can use the Cloud Run service to deploy the API. This allows us to scale the 
 
 Results of Queries can be cached in Google Cloud Storage (GCS) to reduce the cost of querying the BigQuery dataset. The cache key (name of file) is an encoded version of the query string. The cache is set to expire by the bucket settings, and can be manually cleared if needed.
 
-Firestore is used to cache metadata about individual entities as repeatably requesting these from BigQuery would be expensive e.g. Building shapes for Places by place.id.
+Firestore could be used in future to cache metadata about individual entities as repeatably requesting these from BigQuery would be expensive e.g. Building shapes for Places by place.id.
 
 In production you should consider migrating the parts of the dataset you need to a private BigQuery dataset or a different database for speed and cost, especially for building shapes.
 
@@ -26,7 +26,6 @@ In production you should consider migrating the parts of the dataset you need to
 - Fork github repo
 - Update the API key / Setup TheAuthAPI.com Free account
 - Setup a Service Account with the right permissions
-- Setup Firestore for metadata caching
 - Deploy to CloudRun by connecting to your github repo, and apply env vars, and have it use the service-account
 - Test the new API endpoint
 
