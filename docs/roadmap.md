@@ -22,7 +22,7 @@ Currently these are:
 - [x] **[./Places/Brands](./api-endpoints/places-brands)**  endpoint
 - [x] **[./Places/Categories](./api-endpoints/places-categories)** endpoint
 - [x] **[./Places/Countries](./api-endpoints/places-countries)** endpoint
-- [x] **[./Places/Buildings](./api-endpoints/places-buildings)**  endpoint - very expensive dataset in BigQuery so will require sharding by country and optimizing
+- [x] **[./Places/Buildings](./api-endpoints/places-buildings)**  endpoint
 - [x] /Buildings endpoint for Overture Maps 'Building' Theme
 - [ ] /Addresses endpoint for Overture Maps 'Address' Theme
 - [ ] /Transportation & Roads endpoint sfor Overture Maps 'Transportation' Theme

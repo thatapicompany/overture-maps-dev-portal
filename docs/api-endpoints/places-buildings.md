@@ -12,6 +12,8 @@ Reasons for missmatches between the place and building shapes include:
 the lat / lng of the place being in the street
 - the building shape being underground (e.g. a subway station)
 
+Building shapes is quite an expensive dataset, so optimsiations have been taken to reduce the cost of this endpoint.
+
 Ways to improve in future versions include:
 - using the OSM dataset as the primary source, instead of the Microsoft from space building shapes dataset. Getting the lat/lng of the place from OSM and using the nearest building shape from OSM.
 
