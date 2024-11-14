@@ -8,7 +8,7 @@ sidebar_position: 1
 
 However, working directly with these datasets requires a solid understanding of SQL, especially given their large size. Without careful querying, it's easy to incur high costs due to the extensive data volume. Experience in handling large datasets is essential to manage usage efficiently.
 
-Introducing the Unofficial Overture Maps API — a simple RESTful API designed for web developers to access Overture Maps data without needing to know Athena, BigQuery, or complex cost optimization strategies. This API abstracts the complexity, allowing developers to query the data easily and efficiently.
+Introducing the Overture Maps API — a simple RESTful API designed for web developers to access Overture Maps data without needing to know Athena, BigQuery, or complex cost optimization strategies. This API abstracts the complexity, allowing developers to query the data easily and efficiently.
 
 The API is available as a cloud service for testing and exploration. Additionally, a self-hosted version is offered for those who prefer to run it on their own infrastructure.
 

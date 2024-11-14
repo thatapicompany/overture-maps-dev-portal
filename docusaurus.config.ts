@@ -5,7 +5,7 @@ import type * as Redocusaurus from 'redocusaurus';
 
 const config: Config = {
   title: 'OpenSource Overture Maps API',
-  tagline: 'Unofficial API for the phenomenal Overture Maps Foundation datasets',
+  tagline: 'API for the phenomenal Overture Maps Foundation datasets',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -88,7 +88,7 @@ const config: Config = {
       expandResponses: "all", // Optional: expand responses by default
     },
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/OvertureMapsAPI.com-Social.png',
     navbar: {
       title: 'Overture Maps API',
       logo: {
