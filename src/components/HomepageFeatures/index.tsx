@@ -16,7 +16,7 @@ const FeatureList: FeatureItem[] = [
     png: '/img/overture-maps-logo.png',
     description: (
       <>
-        Overture provides free and open map data normalized to a common schema like `addresses`, `buildings`, `base`, `divisions`, `places`, and `transportation` — containing more than 3.7 billion features which is continuing to expand! 
+        Overture provides free and open map data normalized to a common schema like `addresses`, `buildings`, `base`, `divisions`, `places`, and `transportation` — containing more than 3.7 billion features which is continuing to expand every month! 
         <br/> <br/>
         The data comes from many sources, including OpenStreetMap, Meta, Microsoft, Esri, OpenAddresses, and <a href="https://docs.overturemaps.org/attribution/">more</a> 
       </>
