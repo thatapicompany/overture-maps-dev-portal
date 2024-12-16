@@ -80,7 +80,6 @@ const config: Config = {
   themes: [
     'docusaurus-theme-redoc',
   ],
-
   themeConfig: {
     redoc: {
       tryItOutEnabled: true, // Enables the "Try it out" button

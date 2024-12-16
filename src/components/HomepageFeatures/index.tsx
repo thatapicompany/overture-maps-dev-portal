@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import { useQuery } from '@tanstack/react-query';
 
 type FeatureItem = {
   title: string;
@@ -61,6 +62,13 @@ function Feature({title, Svg, png, description}: FeatureItem) {
 }
 
 export default function HomepageFeatures(): JSX.Element {
+
+  //Added for ReactQuery demo
+  const { data } = useQuery({
+    queryKey: ['cat-api-images'],
+    queryFn: () => fetch('https://api.thecatapi.com/v1/images/search?limit=9').then(res => res.json())
+  });
+
   return (
     <section className={styles.features}>
       <div className="container">
@@ -69,6 +77,15 @@ export default function HomepageFeatures(): JSX.Element {
             <Feature key={idx} {...props} />
           ))}
         </div>
+
+          <div><strong>- Cat Images loaded via ReactQuery will appear below this -</strong></div>
+        {/* Added for ReactQuery demo - shows any images returned from theCatAPI.com */}
+        <div className="cat-images">
+          {data && data.map((cat: any) => (
+            <img src={cat.url} alt="A random Cat picture from theCatAPI.com" />
+          ))}
+        </div>
+
       </div>
     </section>
   );
