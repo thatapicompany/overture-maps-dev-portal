@@ -121,6 +121,11 @@ const config: Config = {
           position: 'left',
         },
         {
+          href: 'https://discord.com/invite/SRaRFcQ7Yw',
+          label: 'Discord',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/thatapicompany/overture-maps-api',
           label: 'API GitHub',
           position: 'right',
@@ -142,6 +147,10 @@ const config: Config = {
         {
           title: 'Community',
           items: [
+            {
+              label: 'Discord',
+              href: 'https://discord.com/invite/SRaRFcQ7Yw',
+            },
             {
               label: 'Overture Maps Foundation',
               href: 'https://overturemaps.org/',
