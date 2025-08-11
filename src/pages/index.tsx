@@ -28,6 +28,12 @@ function HomepageHeader() {
             to="/docs/intro">
             Deployment Guide
           </Link>
+          -
+          <Link
+            className="button button--secondary button--lg"
+            href="mailto:aden@thatapicompany.com">
+            Request a Key
+          </Link>
         </div>
       </div>
     </header>
