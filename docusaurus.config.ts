@@ -121,6 +121,11 @@ const config: Config = {
           position: 'left',
         },
         {
+          href: 'https://account.overturemapsapi.com',
+          label: 'Account',
+          position: 'right',
+        },
+        {
           href: 'https://discord.com/invite/SRaRFcQ7Yw',
           label: 'Discord',
           position: 'right',
@@ -168,6 +173,10 @@ const config: Config = {
         {
           title: 'More',
           items: [
+            {
+              label: 'Account',
+              href: 'https://account.overturemapsapi.com',
+            },
             {
               label: 'Blog',
               to: '/blog',
