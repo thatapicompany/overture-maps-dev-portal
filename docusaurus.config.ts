@@ -121,6 +121,11 @@ const config: Config = {
           position: 'left',
         },
         {
+          href: 'https://demo.overturemapsapi.com',
+          label: 'Map Demo',
+          position: 'right',
+        },
+        {
           href: 'https://account.overturemapsapi.com',
           label: 'Account',
           position: 'right',
