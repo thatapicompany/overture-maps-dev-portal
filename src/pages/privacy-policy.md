@@ -45,7 +45,7 @@ title: Privacy Policy
 ## Your rights
 - You may request a copy of your data.
 - You may ask us to delete your data.
-- Contact us at TODO: contact email.
+- Contact us at aden@thatapicompany.com
 
 ## Changes
 - We may update this policy.
