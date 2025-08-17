@@ -25,14 +25,14 @@ Make some test requests to the API to see how it works e.g.
 Download all the US **Starbucks** locations as a JSON file:
 
 ```bash
-curl -o all-starbucks-us.json -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://overture-maps-api.thatapicompany.com/places'  \
+curl -o all-starbucks-us.json -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places'  \
 -d 'country=US'  -d 'brand_name=Starbucks'
 ```
 
 Or see 10 **Tesco** UK Supermarket locations in your terminal:
 
 ```bash
-curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://overture-maps-api.thatapicompany.com/places' \
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
 -d 'country=GB'  -d 'brand_name=Tesco' -d 'limit=10'
 ```
 

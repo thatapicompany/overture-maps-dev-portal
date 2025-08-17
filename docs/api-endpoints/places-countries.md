@@ -8,7 +8,7 @@ sidebar_position: 4
 Example Request to GET all the Countries in the Overture Maps Database:
 
 ```bash
-curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://overture-maps-api.thatapicompany.com/places/countries'
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places/countries'
 ```
 
 ## Counts

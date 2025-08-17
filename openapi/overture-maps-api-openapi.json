@@ -322,7 +322,7 @@
     "description": "Local environment"
     },
     {
-    "url": "https://overture-maps-api.thatapicompany.com",
+    "url": "https://api.overturemapsapi.com",
     "description": "Cloud API Service"
     }
     ],

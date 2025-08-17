@@ -8,7 +8,7 @@ sidebar_position: 3
 Example Request to GET the Categories of all Brands in the France:
 
 ```bash
-curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://overture-maps-api.thatapicompany.com/places/categories'  \
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places/categories'  \
 -d 'country=FR'
 ```
 

@@ -19,7 +19,7 @@ e.g. `?country=US` - The ISO 3166-1 alpha-2 country code to filter by. e.g. `US`
 Example Request to GET 10 the Places by Country:
 
 ```bash
-curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://overture-maps-api.thatapicompany.com/places'  \
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places'  \
 -d 'country=US' -d 'limit=10'
 ```
 
@@ -31,7 +31,7 @@ e.g. `?categories=water_park` - Comma separated string of Categories to filter
 Example Request to GET all the Water Parks in India
 
 ```bash
-curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://overture-maps-api.thatapicompany.com/places' \
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
 -d 'country=IN' -d 'categories=water_park'
 ```
 
@@ -42,7 +42,7 @@ e.g. `?brand_name=H&M` - The name of the Brand to filter by e.g. `Uniqlo`, `McDo
 Example Request to GET all the Uniqlo stores in Japan
 
 ```bash
-curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://overture-maps-api.thatapicompany.com/places' \
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
 -d 'country=JP' -d 'brand_name=Uniqlo'
 ```
 
@@ -53,7 +53,7 @@ Example of a response for a 7-Eleven store in Santa Rosa, CA, USA:
 **Request:**
 
 ```bash
-curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://overture-maps-api.thatapicompany.com/places'  \
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places'  \
 -d 'country=US' -d 'limit=1' -d 'brand_name=7-Eleven'
 ```
 

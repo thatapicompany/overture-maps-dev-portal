@@ -20,7 +20,7 @@ Ways to improve in future versions include:
 - using the OSM dataset as the primary source, instead of the Microsoft from space building shapes dataset. Getting the lat/lng of the place from OSM and using the nearest building shape from OSM.
 
 ```bash
-curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://overture-maps-api.thatapicompany.com/places/buildings?lat=40.7128&lng=-74.006&radius=1000&categories=cafe'
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places/buildings?lat=40.7128&lng=-74.006&radius=1000&categories=cafe'
 ```
 
 ## Response Example

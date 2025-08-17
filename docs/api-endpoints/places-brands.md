@@ -8,6 +8,6 @@ sidebar_position: 2
 Example Request to GET all Brands in the US:
 
 ```bash
-curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://overture-maps-api.thatapicompany.com/places/brands'  \
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places/brands'  \
 -d 'country=US' 
 ```
