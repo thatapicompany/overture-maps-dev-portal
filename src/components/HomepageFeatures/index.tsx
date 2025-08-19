@@ -28,7 +28,7 @@ const FeatureList: FeatureItem[] = [
     png: '/img/container-framed.png',
     description: (
       <>
-        Deploy to your own GCP, AWS or Azure account in minutes, using BigQuery, Snowflake or Athena as your datasource.
+        Deploy to your own GCP account in minutes, using BigQuery as your datasource. GCP give you enough free credits with a new account to make thousands of requests.
         <br/><br/> The API is built with TypeScript and Docker, and is fully documented with OpenAPI 3.0.0.
       </>
     ),
