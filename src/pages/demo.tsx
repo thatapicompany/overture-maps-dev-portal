@@ -7,7 +7,7 @@ function Demo() {
     <Layout title="Demo App using the API" description="App that shows how to use the API">
       <div style={{ width: '100%', height: '80vh', border: 'none' }}>
         <iframe
-          src="https://thatapicompany.retool.com/p/overture-maps-api" // Replace with your remote URL
+          src="https://demo.overturemapsapi.com" // Replace with your remote URL
           style={{ width: '100%', height: '100%', border: 'none' }}
           title="Demo App using the API"
         />

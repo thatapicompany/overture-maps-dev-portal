@@ -121,11 +121,6 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://demo.overturemapsapi.com',
-          label: 'Map Demo',
-          position: 'right',
-        },
-        {
           href: 'https://account.overturemapsapi.com',
           label: 'Account',
           position: 'right',
@@ -187,6 +182,14 @@ const config: Config = {
               to: '/blog',
             },
             {
+              label: 'Contact',
+              to: '/contact',
+            },
+            {
+              label: 'Demo',
+              href: 'https://demo.overturemapsapi.com',
+            },
+            {
               label: 'GitHub',
               href: 'https://github.com/thatapicompany/overture-maps-api',
             },
@@ -202,7 +205,7 @@ const config: Config = {
           ],
         },
       ],
-      //copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ThatAPICompany. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

@@ -37,8 +37,11 @@ This then allows you to easily merge any additional data from OSM - e.g. https:/
 
 #### Other examples of our enriched data:
 
+We have a team continuously updating and improving our enriched data offerings. Some examples include:
+
 - advanced tags
-- opening hours & dates 
+- translations / localisation
+- opening hours & dates
 - website
 - footfall (country dependent)
 - photos
