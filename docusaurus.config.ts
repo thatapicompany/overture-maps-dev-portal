@@ -99,7 +99,7 @@ const config: Config = {
         // Other navbar items
         {
           sidebarId: 'demo',
-          to: '/demo',
+          to: '/demo-map',
           label: 'Demo',
           position: 'left',
         }/*,

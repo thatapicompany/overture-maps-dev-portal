@@ -14,7 +14,7 @@ The API is available as a cloud service for testing and exploration. Additionall
 
 ## Getting Started
 
-Get started by **making API Requests** after **[Trying the Demo](../demo)** and reviewing **[API Documentation](../reference)**.
+Get started by **making API Requests** after **[Trying the Demo](https://demo.overturemapsapi.com)** and reviewing **[API Documentation](../reference)**.
 
 Or **Deploy to your own infrastructure** with the **[GCP / BigQuery](./deploy-to-gcp)** guide.
 

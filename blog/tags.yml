@@ -17,3 +17,8 @@ theauthapi:
   label: theauthapi
   permalink: /theauthapi
   description: Posts about TheAuthAPI.com
+
+places:
+  label: places
+  permalink: /places
+  description: Places as termed in Overture, could be referred to as POIs

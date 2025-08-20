@@ -26,11 +26,10 @@ Interested in enriched data access, enterprise features, or partnership opportun
 
 ## Frequently Asked Questions
 
-Before reaching out, you might find your answer in our [documentation](../docs) or check out these common questions:
+Before reaching out, you might find your answer in our [documentation](/docs/intro) or check out these common questions:
 
-- **Getting Started**: Visit our [Quick Start Guide](../docs/getting-started)
-- **API Reference**: Check our [API Documentation](../docs/api-reference)
-- **Pricing**: Learn about our [pricing options](../docs/pricing)
+- **Getting Started**: Visit our [Quick Start Guide](/docs/intro)
+- **API Reference**: Check our [API Documentation](/reference)
 - **Demo**: Try our [live demo](https://demo.overturemapsapi.com)
 
 ## Community
