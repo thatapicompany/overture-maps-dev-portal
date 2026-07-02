@@ -22,3 +22,7 @@ places:
   label: places
   permalink: /places
   description: Places as termed in Overture, could be referred to as POIs
+divisions:
+  label: divisions
+  permalink: /divisions
+  description: Administrative boundaries - countries, regions, counties, localities and neighborhoods
