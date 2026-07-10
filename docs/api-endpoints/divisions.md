@@ -62,6 +62,19 @@ curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/div
 -d 'name=washington' -d 'subtype=county,locality'
 ```
 
+### By Admin Level
+
+`admin_level` — the division's position in its country's hierarchy: `0` is the country, `1` the first-level subdivision (states/regions), `2` the next (counties), and so on. Comma-separated list. Where subtype naming varies between countries, admin_level gives you a consistent way to say "give me the state-level areas":
+
+```bash
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/divisions' \
+-d 'country=US' -d 'name=new york' -d 'admin_level=1'
+```
+
+That query cleanly returns New York **State** (`admin_level: 1`) rather than the city or its neighborhoods.
+
+Every division response also includes `admin_level`, `is_land`, `is_territorial` and `division_id` (the parent division feature this area belongs to).
+
 ### By Bounding Box
 
 `bbox=xmin,ymin,xmax,ymax` (lng/lat order) — only return divisions whose bounding box intersects yours. Ideal for restricting a search to the visible map viewport:
@@ -100,6 +113,14 @@ curl -H "x-api-key: DEMO-API-KEY" -X GET \
 ```
 
 Returns `404` if the ID is unknown.
+
+:::note Geometry fallback
+A small number of upstream records (currently the Russia and Australia country land areas) have missing geometry in the source data. For these, the API serves the boundary from the division's sibling area (land + territorial waters) and flags it with `"ext_geometry_source": "maritime"` in the properties — so you always receive a usable boundary. Records with their own geometry are never flagged.
+:::
+
+## Pagination
+
+All division searches support `limit` + `page` with `Pagination-Count` / `Pagination-Page` / `Pagination-Limit` response headers — see [Pagination](../pagination).
 
 ## Recommended Pattern: Search Box over a Map
 

@@ -169,3 +169,7 @@ Example for Places with Buildings in New York
         }
     }]
 ```
+
+## Pagination
+
+Supports `limit` + `page` with `Pagination-Count` / `Pagination-Page` / `Pagination-Limit` response headers — see [Pagination](../pagination).

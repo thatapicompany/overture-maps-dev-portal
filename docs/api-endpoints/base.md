@@ -50,3 +50,7 @@ Example response (geometry truncated):
 - Rendering parks, green space and water context around your points of interest
 - Land-use classification of an area (residential vs commercial vs industrial)
 - Environmental and urban-planning analysis
+
+## Pagination
+
+Supports `limit` + `page` with `Pagination-Count` / `Pagination-Page` / `Pagination-Limit` response headers — see [Pagination](../pagination).

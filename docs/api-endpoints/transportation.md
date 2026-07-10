@@ -51,3 +51,7 @@ Example response (geometry truncated):
 - Drawing the street network around a location
 - Walkability / access analysis (footways, cycleways, road classes)
 - Seeding a routing graph for a local area using segment connectors
+
+## Pagination
+
+Supports `limit` + `page` with `Pagination-Count` / `Pagination-Page` / `Pagination-Limit` response headers — see [Pagination](../pagination).

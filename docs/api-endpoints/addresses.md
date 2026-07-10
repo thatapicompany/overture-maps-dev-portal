@@ -50,3 +50,7 @@ Example response:
 - Reverse lookup: "what addresses are at/near this point?"
 - Address density and delivery-area analysis
 - Validating or enriching your own address data against open sources
+
+## Pagination
+
+Supports `limit` + `page` with `Pagination-Count` / `Pagination-Page` / `Pagination-Limit` response headers — see [Pagination](../pagination).
