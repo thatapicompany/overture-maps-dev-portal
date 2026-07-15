@@ -23,13 +23,13 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Dockerised TypeScript API',
+    title: 'A hosted API, ready in seconds',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     png: '/img/container-framed.png',
     description: (
       <>
-        Deploy to your own GCP account in minutes, using BigQuery as your datasource. GCP give you enough free credits with a new account to make thousands of requests.
-        <br/><br/> The API is built with TypeScript and Docker, and is fully documented with OpenAPI 3.0.0.
+        Grab an API key and start querying straight away — no infrastructure to run. Fully documented with OpenAPI 3.0.0, with guides for the common use cases.
+        <br/><br/> Prefer to self-host? The API is open source (TypeScript + Docker) and deploys to your own GCP account using BigQuery. See the <a href="https://github.com/thatapicompany/overture-maps-api">GitHub repo</a>.
       </>
     ),
   },
