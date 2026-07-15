@@ -26,7 +26,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Deployment Guide
+            Docs & Guides
           </Link>
           -
           <Link
@@ -45,7 +45,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Overture Maps API, how to fork it and host it yourself">
+      description="The hosted Overture Maps API — query billions of places, buildings, addresses and divisions with a simple API key. Open source and self-hostable too.">
       <HomepageHeader />
       <main>
         <div className="container" style={{ textAlign: 'center', marginTop: '20px' }}>
