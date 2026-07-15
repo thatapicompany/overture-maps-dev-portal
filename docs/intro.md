@@ -16,7 +16,7 @@ The API is available as a cloud service for testing and exploration. Additionall
 
 Get started by **making API Requests** after **[Trying the Demo](https://demo.overturemapsapi.com)** and reviewing the **[API Documentation](../reference)**.
 
-Then follow a **[step-by-step guide](./guides/)** — for example, [building a local business directory](./guides/build-a-local-business-directory) for any country and category.
+Then follow a **step-by-step guide** — for example, [building a local business directory](./guides/build-a-local-business-directory) for any country and category.
 
 Prefer to run it yourself? The API is open source — **[deploy to your own infrastructure](./deploy-to-gcp)** with the GCP / BigQuery guide.
 
