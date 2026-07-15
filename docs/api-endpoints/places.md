@@ -82,6 +82,39 @@ curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/pla
 
 Logo URLs are Wikimedia Commons links — append `?width=200` for a resized image. Present where Overture links the place's brand to a Wikidata QID (~1.5M places across ~3,000 chains).
 
+### Contact details (websites, phones, emails, socials)
+
+Every place returns its contact details **by default** — no special parameter is required:
+
+```json
+"websites": ["https://www.example-cafe.co.uk"],
+"phones": ["+441234567890"],
+"emails": ["hello@example-cafe.co.uk"],
+"socials": ["https://www.facebook.com/examplecafe"]
+```
+
+:::tip These are returned by default
+You do **not** need `enrichment_fields` for websites or phones. `enrichment_fields=brand` is only for the Wikidata brand layer (logos, industry, parent). The four contact arrays above are always in the response when Overture has them.
+:::
+
+Coverage varies by country and category. In well-mapped markets, websites and phones are populated for the large majority of businesses; emails and socials are sparser.
+
+#### Filter to places that have contact details — `has_contact`
+
+`has_contact` returns **only** places that already have at least one of the listed contact fields. It's comma-separated and matched with **OR**, which is ideal when you only want businesses you can actually reach or verify:
+
+```bash
+# only places with a website
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
+-d 'country=GB' -d 'categories=restaurant' -d 'has_contact=website'
+
+# places with a website OR a social link (catches businesses that use a Facebook page instead of a site)
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
+-d 'country=GB' -d 'categories=restaurant' -d 'has_contact=website,social'
+```
+
+Allowed values: `website`, `phone`, `email`, `social`. The `Pagination-Count` header reflects the **filtered** total, so you can see how many places match before paging through them.
+
 ### Brands / Retail Chain
 
 e.g. `brand_name=H&M` - The name of the Brand to filter by e.g. `Uniqlo`, `McDonalds`
