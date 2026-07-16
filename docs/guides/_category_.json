@@ -1,6 +1,7 @@
 {
   "label": "Guides",
   "position": 5,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "Practical, end-to-end guides for common use cases."
