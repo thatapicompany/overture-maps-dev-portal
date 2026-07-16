@@ -8,8 +8,11 @@ const config: Config = {
   tagline: 'API for the phenomenal Overture Maps Foundation datasets',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
-  url: 'https://overturemapsapi.com',
+  // Set the production url of your site here.
+  // The site serves on www (apex 308-redirects to www), so canonical URLs,
+  // the sitemap and og:url must use www to match the served host — otherwise
+  // Google crawls both hosts and splits ranking signals.
+  url: 'https://www.overturemapsapi.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -40,6 +43,17 @@ const config: Config = {
         },
         docs: {
           sidebarPath: './sidebars.ts',
+        },
+        sitemap: {
+          // Keep thin auto-generated blog archive pages out of the sitemap so
+          // crawl budget goes to real content (these were the bulk of the
+          // "crawled - currently not indexed" pages in Search Console).
+          ignorePatterns: [
+            '/blog/tags/**',
+            '/blog/authors/**',
+            '/blog/archive',
+            '/blog/page/**',
+          ],
         },
         blog: {
           showReadingTime: true,

@@ -1,0 +1,26 @@
+# OpenSource Overture Maps API
+
+> A hosted, open-source REST API for Overture Maps Foundation data. Query billions of places (POIs), buildings, addresses, administrative divisions, base and transportation features with a simple API key — no BigQuery, Athena or SQL required. Also self-hostable on your own GCP account.
+
+Base URL: https://api.overturemapsapi.com
+Docs & site: https://www.overturemapsapi.com
+
+## Key concepts
+
+- Authenticate with an `x-api-key` header. A public `DEMO-API-KEY` is available for testing.
+- Filter places by `country` (ISO 3166-1 alpha-2), `categories`, hierarchy-aware `taxonomy`, `brand_name`/`brand_wikidata`, `lat`/`lng`/`radius`, `min_confidence`, and `operating_status`.
+- Contact fields (`websites`, `phones`, `emails`, `socials`) are returned by default. `has_contact` filters to places that have them. `enrichment_fields=brand` adds Wikidata brand details (logo, official site).
+- Results are paginated with `limit` + `page`; totals are in the `Pagination-Count` header.
+- Output formats: `json` (default), `geojson`, `csv`.
+
+## Docs
+
+- Intro: https://www.overturemapsapi.com/docs/intro
+- Places endpoint: https://www.overturemapsapi.com/docs/api-endpoints/places
+- Pagination: https://www.overturemapsapi.com/docs/pagination
+- Guides (e.g. build a local business directory): https://www.overturemapsapi.com/docs/guides/build-a-local-business-directory
+- Full API reference (OpenAPI): https://www.overturemapsapi.com/reference
+
+## About
+
+Built by ThatAPICompany (https://thatapicompany.com) to make Overture Maps data accessible to developers of any skill level. Source: https://github.com/thatapicompany/overture-maps-api

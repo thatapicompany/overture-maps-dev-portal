@@ -1,5 +1,8 @@
 ---
 sidebar_position: 5
+title: "API Key Management — Rate Limiting & Domain Locking (Self-Hosted)"
+description: "Create and manage API keys, add rate limiting and domain locking when self-hosting the open-source Overture Maps API."
+sidebar_label: "API Key Management"
 ---
 
 # API Key Management

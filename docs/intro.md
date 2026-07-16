@@ -1,5 +1,8 @@
 ---
 sidebar_position: 1
+title: "Overture Maps API — REST API for Places, Buildings & Address Data"
+description: "The OpenSource Overture Maps API is a simple REST API for Overture Maps data — query places, buildings, addresses and divisions without Athena, BigQuery or SQL. Hosted or self-hostable."
+sidebar_label: "Introduction"
 ---
 
 # What is the Overture Maps Data and Why does it need an API?

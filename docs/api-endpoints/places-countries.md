@@ -1,5 +1,8 @@
 ---
 sidebar_position: 4
+title: "Overture Places by Country — List Countries & Place Counts"
+description: "List every country in the Overture Maps places dataset and how many places each has, via a simple REST API call."
+sidebar_label: "GET /places/countries"
 ---
 
 # GET ./places/countries

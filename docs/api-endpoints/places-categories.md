@@ -1,5 +1,8 @@
 ---
 sidebar_position: 3
+title: "Overture Place Categories API — List POI Categories"
+description: "List the place categories available in the Overture Maps dataset for a country, via the REST API."
+sidebar_label: "GET /places/categories"
 ---
 
 # GET ./places/categories

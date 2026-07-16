@@ -1,5 +1,8 @@
 ---
 sidebar_position: 6
+title: "Deploy the Overture Maps API to Google Cloud (GCP + BigQuery)"
+description: "Self-host the open-source Overture Maps API on your own GCP account using BigQuery, with a step-by-step deployment guide."
+sidebar_label: "Deploy to GCP"
 ---
 
 # Deploy to GCP (Google Cloud Platform)
