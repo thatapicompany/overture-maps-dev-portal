@@ -1,5 +1,8 @@
 ---
 sidebar_position: 1
+title: "Overture Places API — Query POIs by Category, Brand, Country & Location"
+description: "Query Overture Maps places (POIs) via a REST API. Filter by category, taxonomy, brand, country or lat/long radius, get contact details, and paginate whole countries."
+sidebar_label: "GET /places"
 ---
 
 # GET ./places

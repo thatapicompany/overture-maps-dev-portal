@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Thin auto-generated blog archive pages — low value for search
+Disallow: /blog/tags/
+Disallow: /blog/authors/
+Disallow: /blog/archive
+Disallow: /blog/page/
+
+Sitemap: https://www.overturemapsapi.com/sitemap.xml
