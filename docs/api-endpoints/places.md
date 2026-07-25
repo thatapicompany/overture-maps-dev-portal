@@ -30,11 +30,11 @@ curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/pla
 
 e.g. `categories=water_park` - Comma separated string of Categories to filter
 
-Example Request to GET all the Water Parks in India
+Example Request to GET all the Water Parks within 25km of Sydney
 
 ```bash
 curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
--d 'country=IN' -d 'categories=water_park'
+-d 'lat=-33.8688' -d 'lng=151.2093' -d 'radius=25000' -d 'categories=water_park'
 ```
 
 :::info Overture is retiring `categories` in September 2026
@@ -109,11 +109,11 @@ Coverage varies by country and category. In well-mapped markets, websites and ph
 ```bash
 # only places with a website
 curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
--d 'country=GB' -d 'categories=restaurant' -d 'has_contact=website'
+-d 'lat=51.5074' -d 'lng=-0.1278' -d 'radius=2000' -d 'categories=restaurant' -d 'has_contact=website'
 
 # places with a website OR a social link (catches businesses that use a Facebook page instead of a site)
 curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
--d 'country=GB' -d 'categories=restaurant' -d 'has_contact=website,social'
+-d 'lat=51.5074' -d 'lng=-0.1278' -d 'radius=2000' -d 'categories=restaurant' -d 'has_contact=website,social'
 ```
 
 Allowed values: `website`, `phone`, `email`, `social`. The `Pagination-Count` header reflects the **filtered** total, so you can see how many places match before paging through them.
@@ -122,29 +122,29 @@ Allowed values: `website`, `phone`, `email`, `social`. The `Pagination-Count` he
 
 e.g. `brand_name=H&M` - The name of the Brand to filter by e.g. `Uniqlo`, `McDonalds`
 
-Example Request to GET all the Uniqlo stores in Japan
+Example Request to GET Uniqlo stores within 10km of New York City
 
 ```bash
 curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
--d 'country=JP' -d 'brand_name=Uniqlo'
+-d 'lat=40.7128' -d 'lng=-74.0060' -d 'radius=10000' -d 'brand_name=Uniqlo'
 ```
 
-Example of a response for a 7-Eleven stores in the US:
+Example of a response for a 7-Eleven store near New York City:
 
 ```bash
 curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places'  \
--d 'country=US' -d 'limit=1' -d 'brand_name=7-Eleven'
+-d 'lat=40.7128' -d 'lng=-74.0060' -d 'radius=10000' -d 'limit=1' -d 'brand_name=7-Eleven'
 ```
 
 ### By Country
 
-e.g. `?country=US` - The ISO 3166-1 alpha-2 country code to filter by. e.g. `US`, `GB`, `FR` (UK is GB)
+e.g. `?country=US` - The ISO 3166-1 alpha-2 country code to filter by. e.g. `US`, `GB`, `FR` (UK is GB). Country-level queries need your own API key (the demo key is limited to nearby lat/lng search) and must include a narrowing filter such as `categories`, `taxonomy` or `brand_name`.
 
-Example Request to GET 10 the Places by Country:
+Example Request to GET 10 restaurants in the US (with your own key):
 
 ```bash
-curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places'  \
--d 'country=US' -d 'limit=10'
+curl -H "x-api-key: YOUR-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places'  \
+-d 'country=US' -d 'categories=restaurant' -d 'limit=10'
 ```
 
 ### Pagination

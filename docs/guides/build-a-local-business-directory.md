@@ -14,10 +14,10 @@ For a chosen country and category, you'll pull every matching business, keep onl
 
 ## Step 1 — Find the businesses
 
-Start with a country code (ISO 3166-1 alpha-2) and a category. Ask for a single result first to see the shape of the data:
+Start with a country code (ISO 3166-1 alpha-2) and a category. Country-level queries need your own API key ([free](https://www.overturemapsapi.com)) — the demo key is limited to nearby lat/lng search. Ask for a single result first to see the shape of the data:
 
 ```bash
-curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
+curl -H "x-api-key: YOUR-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
 -d 'country=FR' -d 'categories=bakery' -d 'limit=1'
 ```
 
@@ -50,7 +50,7 @@ If your product verifies or enriches businesses via their own website (or a soci
 
 ```bash
 # bakeries with a website OR a social link
-curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
+curl -H "x-api-key: YOUR-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
 -d 'country=FR' -d 'categories=bakery' -d 'has_contact=website,social'
 ```
 
