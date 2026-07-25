@@ -27,19 +27,23 @@ Prefer to run it yourself? The API is open source — **[deploy to your own infr
 
 Make some test requests to the API to see how it works e.g.
 
-Download all the US **Starbucks** locations as a JSON file:
+Download every **Starbucks** within 10km of New York City as a JSON file:
 
 ```bash
-curl -o all-starbucks-us.json -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places'  \
--d 'country=US'  -d 'brand_name=Starbucks'
+curl -o starbucks-near-nyc.json -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places'  \
+-d 'lat=40.7128' -d 'lng=-74.0060' -d 'radius=10000' -d 'brand_name=Starbucks'
 ```
 
-Or see 10 **Tesco** UK Supermarket locations in your terminal:
+Or see 10 **Tesco** stores near London in your terminal:
 
 ```bash
 curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
--d 'country=GB'  -d 'brand_name=Tesco' -d 'limit=10'
+-d 'lat=51.5074' -d 'lng=-0.1278' -d 'radius=10000' -d 'brand_name=Tesco' -d 'limit=10'
 ```
+
+:::tip The demo key is for nearby search
+`DEMO-API-KEY` works for lat/lng radius queries around a few demo cities (New York, London, Paris, Sydney). For country-wide pulls and your own locations, [grab a free API key](https://www.overturemapsapi.com) — it only takes a minute.
+:::
 
 ... and then explore the other **[./places endpoints](./api-endpoints/places)** and make API requests for Brands and Categories of places for each Country, or search by latitude and longitude.
 

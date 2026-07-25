@@ -26,10 +26,10 @@ A single GeoJSON file containing one brand's locations across a whole country, r
 
 ## Step 1 — Find the brand
 
-Filter places by **`brand_name`** and a country code (ISO 3166-1 alpha-2). Ask for a single result first to see the shape of the data, and check the `Pagination-Count` header for the total:
+Filter places by **`brand_name`** and a country code (ISO 3166-1 alpha-2). Country-level queries need your own API key ([free, takes a minute](https://www.overturemapsapi.com)) — the demo key is limited to nearby lat/lng search. Ask for a single result first to see the shape of the data, and check the `Pagination-Count` header for the total:
 
 ```bash
-curl -i -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
+curl -i -H "x-api-key: YOUR-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
 -d 'brand_name=Greggs' -d 'country=GB' -d 'limit=1'
 ```
 
