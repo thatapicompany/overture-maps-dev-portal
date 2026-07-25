@@ -33,7 +33,7 @@ Overture releases roughly monthly (mid-month). New here? Start with the [introdu
 - **Faster, cheaper place queries** — the `/places` backend now prunes spatially, so lat/lng radius queries return quicker.
 - **Demo key scoped to nearby search** — `DEMO-API-KEY` now supports lat/lng radius queries only; country-level pulls need a [free API key](https://www.overturemapsapi.com).
 - **New: Overture Maps MCP server** — connect the API to Claude and other LLM tools.
-- **New guides** — [Build a local business directory](./guides/build-a-local-business-directory), with more on the way (mapping a whole retail chain, and more).
+- **New guides** — [Build a local business directory](./guides/build-a-local-business-directory) and [Map every location of a retail chain](./guides/map-every-location-of-a-retail-chain).
 
 <!--
 NEXT RELEASE TEMPLATE (copy above the entries, fill in from Overture's notes):
