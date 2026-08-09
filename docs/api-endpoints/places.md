@@ -136,9 +136,20 @@ curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/pla
 -d 'lat=40.7128' -d 'lng=-74.0060' -d 'radius=10000' -d 'limit=1' -d 'brand_name=7-Eleven'
 ```
 
+### By Name
+
+`name` filters to places whose own name matches — an additional filter on top of your lat/lng/radius (or country) search, not a standalone text search. It's a case-insensitive exact match against the place's primary name (and any localized common name, where Overture has one):
+
+```bash
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
+-d 'lat=40.785091' -d 'lng=-73.968285' -d 'radius=3000' -d 'name=Central Park'
+```
+
+Combine it with other filters as needed, e.g. `brand_name` to pin a chain down to one specific location by name.
+
 ### By Country
 
-e.g. `?country=US` - The ISO 3166-1 alpha-2 country code to filter by. e.g. `US`, `GB`, `FR` (UK is GB). Country-level queries need your own API key (the demo key is limited to nearby lat/lng search) and must include a narrowing filter such as `categories`, `taxonomy` or `brand_name`.
+e.g. `?country=US` - The ISO 3166-1 alpha-2 country code to filter by. e.g. `US`, `GB`, `FR` (UK is GB). Country-level queries need your own API key (the demo key is limited to nearby lat/lng search) and must include a narrowing filter such as `categories`, `taxonomy`, `brand_name` or `name`.
 
 Example Request to GET 10 restaurants in the US (with your own key):
 
