@@ -16,6 +16,17 @@ Overture releases roughly monthly (mid-month). New here? Start with the [introdu
 
 ---
 
+## 2026-09-23 · Data — Overture `2026-09-23.0` (schema v2.0.0)
+
+- **`categories` is gone upstream.** Overture's schema v2.0.0 removes the places `categories` property entirely, in favour of `taxonomy` and `basic_category`. This API keeps the `categories` response field and filter working, now derived from `taxonomy`, and [`/places/categories`](./api-endpoints/places-categories) now lists taxonomy values. The values themselves now follow the taxonomy vocabulary, so any legacy category string that differs from its taxonomy equivalent will stop matching. If you filter on specific strings, use the [`taxonomy` filter](./api-endpoints/places).
+- **Places up 10.6% to 81.5M.** BrightQuery expanded beyond the US into Germany, Italy and Denmark (2.29M to 10.26M places) and added more US places under `services_and_business`. Expect many new results in those countries.
+- **`operating_status=open` returns far more.** Places marked open grew 66.2%, from 11.05M to 18.36M.
+- **Addresses: source labels have changed.** `sources[].dataset` values on [`/addresses`](./api-endpoints/addresses) now use a `provider/resource` form, so update any code that filters or groups on those strings. `record_id`, `update_time` and `license` are now populated on every address source. Coverage grew 0.29% to 474.2M, with new data for New Caledonia, French Polynesia, three Taiwanese counties and New Orleans, plus roughly 1M new addresses in Italy with better location precision.
+- **Buildings: new `shelter` class** on around 321,000 buildings, many of them previously unclassed `civic` buildings. If you filter on `class` via [`/places/buildings`](./api-endpoints/places-buildings), re-check those. Buildings +0.17% to 2.53bn, building parts +3.39%.
+- **Base: new IDs for every `land_use` feature.** Overture changed how base-theme IDs are generated, so `land_use` IDs from [`/base`](./api-endpoints/base) have all changed; don't rely on IDs cached before this release. `land_use` grew 0.86%, `land_cover` is unchanged.
+- **Divisions** saw only minor, incremental changes (+0.63%). **Transportation** road length is up 263,339 km (+0.28%) and TomTom segments up 5.5%.
+- Full upstream notes: [Overture 2026-09-23 release](https://docs.overturemaps.org/blog/2026/09/23/release-notes/).
+
 ## 2026-08-19 · Data — Overture `2026-08-19.0` (schema v1.18.0)
 
 - **Last release before `categories` disappears.** Overture removes the `categories` property in the **September 2026** release, replaced by `basic_category` and `taxonomy`. If you filter or match on specific category strings, move to the [`taxonomy` filter](./api-endpoints/places) this month. Overture also shipped further taxonomy and category clean-up in this release, so some places will have shifted category.
