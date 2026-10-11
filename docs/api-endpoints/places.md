@@ -147,6 +147,19 @@ curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/pla
 
 Combine it with other filters as needed, e.g. `brand_name` to pin a chain down to one specific location by name.
 
+### By Partial Name (type-ahead)
+
+`name_prefix` finds places whose name starts with what someone has typed so far, or has a word that does. `blue bo` and `bottle` both match "Blue Bottle Coffee". It's case-insensitive and needs at least 2 characters.
+
+With `lat`/`lng`, results come back nearest first, so a small `limit` gives you the closest few matches for a suggestions dropdown:
+
+```bash
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
+-d 'lat=40.7128' -d 'lng=-74.0060' -d 'radius=5000' -d 'name_prefix=blue bo' -d 'limit=5'
+```
+
+Each call is a normal request and counts towards your monthly allowance, so debounce keystrokes (around 300 ms) and wait for 2 or 3 characters before searching. Responses typically take a second or two, so show a loading state.
+
 ### By Country
 
 e.g. `?country=US` - The ISO 3166-1 alpha-2 country code to filter by. e.g. `US`, `GB`, `FR` (UK is GB). Country-level queries need your own API key (the demo key is limited to nearby lat/lng search) and must include a narrowing filter such as `categories`, `taxonomy`, `brand_name` or `name`.
