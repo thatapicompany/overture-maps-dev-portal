@@ -14,7 +14,7 @@ For a chosen country and category, you'll pull every matching business, keep onl
 
 ## Step 1 — Find the businesses
 
-Start with a country code (ISO 3166-1 alpha-2) and a category. Country-level queries need your own API key ([free](https://www.overturemapsapi.com)) — the demo key is limited to nearby lat/lng search. Ask for a single result first to see the shape of the data:
+Start with a country code (ISO 3166-1 alpha-2) and a category. Country-level queries need a [paid plan](https://account.overturemapsapi.com); the Free plan and the demo key search by `lat`, `lng` and `radius` (up to 25 km), so on Free, build the directory city by city. Ask for a single result first to see the shape of the data:
 
 ```bash
 curl -H "x-api-key: YOUR-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
