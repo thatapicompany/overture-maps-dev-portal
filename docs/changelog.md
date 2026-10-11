@@ -16,6 +16,10 @@ Overture releases roughly monthly (mid-month). New here? Start with the [introdu
 
 ---
 
+## 2026-10 · API: partial-name search
+
+- **New `name_prefix` filter on [`/places`](./api-endpoints/places).** Matches places whose name, or a word in it, starts with the text you pass, so it can back a type-ahead location field. Combine it with `lat`/`lng` and a small `limit` for the nearest matches first.
+
 ## 2026-09-23 · Data — Overture `2026-09-23.0` (schema v2.0.0)
 
 - **`categories` is gone upstream.** Overture's schema v2.0.0 removes the places `categories` property entirely, in favour of `taxonomy` and `basic_category`. This API keeps the `categories` response field and filter working, now derived from `taxonomy`, and [`/places/categories`](./api-endpoints/places-categories) now lists taxonomy values. The values themselves now follow the taxonomy vocabulary, so any legacy category string that differs from its taxonomy equivalent will stop matching. If you filter on specific strings, use the [`taxonomy` filter](./api-endpoints/places).
