@@ -151,7 +151,7 @@ Combine it with other filters as needed, e.g. `brand_name` to pin a chain down t
 
 e.g. `?country=US` - The ISO 3166-1 alpha-2 country code to filter by. e.g. `US`, `GB`, `FR` (UK is GB).
 
-Country-level queries (a `country` with no `lat`/`lng`) are available on [paid plans](https://account.overturemapsapi.com) and must include a narrowing filter such as `categories`, `taxonomy`, `brand_name` or `name`. On the Free plan and with the demo key, search by `lat`, `lng` and `radius` (up to 25 km) instead; you can still add `country` alongside them as an extra filter. A Free key sending a country-level query gets a `403` explaining this. See [Usage limits](../limits).
+Country-level queries (a `country` with no `lat`/`lng`) are available on [paid plans](/pricing) and must include a narrowing filter such as `categories`, `taxonomy`, `brand_name` or `name`. On the Free plan and with the demo key, search by `lat`, `lng` and `radius` (up to 25 km) instead; you can still add `country` alongside them as an extra filter. A Free key sending a country-level query gets a `403` explaining this. See [Usage limits](../limits).
 
 Example Request to GET 10 restaurants in the US (paid plan):
 

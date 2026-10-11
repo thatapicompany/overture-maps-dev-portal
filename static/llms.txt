@@ -20,6 +20,7 @@ Docs & site: https://www.overturemapsapi.com
 - Places endpoint: https://www.overturemapsapi.com/docs/api-endpoints/places
 - Pagination: https://www.overturemapsapi.com/docs/pagination
 - Usage limits: https://www.overturemapsapi.com/docs/limits
+- Pricing: https://www.overturemapsapi.com/pricing (Free $0 non-commercial, 100 requests/month; Premium $25/month, 1,000; Growth $50/month, 4,000; Scale $100/month, 10,000; paid plans include a commercial licence and country-level place queries)
 - Guides (e.g. build a local business directory): https://www.overturemapsapi.com/docs/guides/build-a-local-business-directory
 - Full API reference (OpenAPI): https://www.overturemapsapi.com/reference
 

@@ -10,7 +10,7 @@ These limits apply to the hosted API at `api.overturemapsapi.com`. If you self-h
 
 ## Monthly requests
 
-Every plan includes a monthly allowance of requests. Past the allowance your requests keep working, with an `X-Quota-Warning` header, until you reach the plan's limit. At the limit the API returns `429` with `"error": "monthly_quota_exceeded"` and a `Retry-After` header, until 00:00 UTC on the 1st of next month. Your plan's numbers are in your [account](https://account.overturemapsapi.com) and in the headers below.
+Every plan includes a monthly allowance of requests. Past the allowance your requests keep working, with an `X-Quota-Warning` header, until you reach the plan's limit. At the limit the API returns `429` with `"error": "monthly_quota_exceeded"` and a `Retry-After` header, until 00:00 UTC on the 1st of next month. Each plan's allowance is on the [pricing page](/pricing), and your own numbers are in the headers below.
 
 Every response to a key with a monthly limit carries (the demo key has none):
 
@@ -34,7 +34,7 @@ There is also a short per-minute limit. Going over it returns `429` with a messa
 
 ## Country-level place queries
 
-A `/places` query with a `country` and no `lat`/`lng` reads a whole country, so it is a paid-plan feature. On the Free plan, search by `lat`, `lng` and `radius` (up to 25 km); `country` still works as an extra filter alongside them. A Free key sending a country-level query gets a `403` with this explanation, and it does not count towards your allowance.
+A `/places` query with a `country` and no `lat`/`lng` reads a whole country, so it is a [paid-plan](/pricing) feature. On the Free plan, search by `lat`, `lng` and `radius` (up to 25 km); `country` still works as an extra filter alongside them. A Free key sending a country-level query gets a `403` with this explanation, and it does not count towards your allowance.
 
 ## The demo key
 
