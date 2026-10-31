@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/demo-map", "destination": "/explorer", "permanent": true }
+  ]
+}
