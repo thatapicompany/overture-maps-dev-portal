@@ -128,6 +128,7 @@ const config: Config = {
           position: 'left',
           label: 'Docs & Guides',
         },
+        {to: '/pricing', label: 'Pricing', position: 'left'},
         {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: '/reference',
@@ -190,6 +191,10 @@ const config: Config = {
             {
               label: 'Account',
               href: 'https://account.overturemapsapi.com',
+            },
+            {
+              label: 'Pricing',
+              to: '/pricing',
             },
             {
               label: 'Blog',

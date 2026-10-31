@@ -1,0 +1,116 @@
+.intro {
+  max-width: 44rem;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.intro p {
+  font-size: 1.15rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  box-shadow: none;
+}
+
+.plan :global(.card__body) {
+  flex: 1;
+}
+
+.highlight {
+  border: 2px solid var(--ifm-color-primary);
+}
+
+.planName {
+  margin-bottom: 0.25rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.period {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.tagline {
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 0;
+  min-height: 3rem;
+}
+
+.features {
+  padding-left: 1.1rem;
+  margin-bottom: 0;
+}
+
+.features li {
+  margin-bottom: 0.4rem;
+}
+
+.faq {
+  max-width: 44rem;
+  margin: 3.5rem auto 0;
+}
+
+.faqItem {
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  padding: 0.85rem 0;
+}
+
+.faqItem summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faqItem p {
+  margin: 0.6rem 0 0;
+}
+
+@media screen and (max-width: 996px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.custom {
+  margin-top: 1.25rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  box-shadow: none;
+}
+
+.customTitle {
+  margin-bottom: 0.35rem;
+}
+
+.customBody {
+  margin-bottom: 0;
+  max-width: 40rem;
+  color: var(--ifm-color-emphasis-700);
+}
