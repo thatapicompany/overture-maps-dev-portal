@@ -42,7 +42,7 @@ Example response (geometry truncated):
 ### Other Parameters
 
 - `limit` — maximum number of results (default 25000)
-- `format` — `json` (default), `csv` or `geojson` (drop straight onto a map)
+- `format` — `json` (default) or `geojson` (drop straight onto a map)
 - `includes` — comma-separated list of property fields to keep, for lighter responses
 
 ## Use Cases

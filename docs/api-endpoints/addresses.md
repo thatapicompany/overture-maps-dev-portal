@@ -42,7 +42,7 @@ Example response:
 ### Other Parameters
 
 - `limit` — maximum number of results (default 25000)
-- `format` — `json` (default), `csv` or `geojson`
+- `format` — `json` (default) or `geojson`
 - `includes` — comma-separated list of property fields to keep, for lighter responses
 
 ## Use Cases

@@ -53,6 +53,8 @@ const config: Config = {
             '/blog/authors/**',
             '/blog/archive',
             '/blog/page/**',
+            // Old demo path; redirects to /explorer.
+            '/demo-map',
           ],
         },
         blog: {
@@ -113,8 +115,8 @@ const config: Config = {
         // Other navbar items
         {
           sidebarId: 'demo',
-          to: '/demo-map',
-          label: 'Demo',
+          to: '/explorer',
+          label: 'Explorer',
           position: 'left',
         }/*,
         {

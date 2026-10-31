@@ -152,6 +152,6 @@ Not every brand has a Wikidata match, so `ext_brand` only appears when Overture 
 
 ## Publish it
 
-A finished "every X in the country" map is genuinely shareable — it does well on LinkedIn and mapping communities, and it's a natural credit back to the API. Export the GeoJSON (or a CSV with `format=csv`), publish the map, and link the data source. It's one of the cheapest pieces of content you can make and one of the most re-postable.
+A finished "every X in the country" map is genuinely shareable — it does well on LinkedIn and mapping communities, and it's a natural credit back to the API. Export the GeoJSON, publish the map, and link the data source. It's one of the cheapest pieces of content you can make and one of the most re-postable.
 
 That's the whole loop: filter by `brand_name` and `country`, pull the country as GeoJSON, and drop it on a map.

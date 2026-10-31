@@ -1,19 +1,6 @@
-// src/pages/TryItOut.js
-import React from 'react';
-import Layout from '@theme/Layout';
+// The demo page grew into the explorer. Keep this path working for old links.
+import { Redirect } from '@docusaurus/router';
 
-function Demo() {
-  return (
-    <Layout title="Demo App using the API" description="App that shows how to use the API">
-      <div style={{ width: '100%', height: '80vh', border: 'none' }}>
-        <iframe
-          src="https://demo.overturemapsapi.com" // Replace with your remote URL
-          style={{ width: '100%', height: '100%', border: 'none' }}
-          title="Demo App using the API"
-        />
-      </div>
-    </Layout>
-  );
+export default function DemoMap(): JSX.Element {
+  return <Redirect to="/explorer" />;
 }
-
-export default Demo
