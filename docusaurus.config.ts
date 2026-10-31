@@ -220,6 +220,10 @@ const config: Config = {
           title: 'Legal',
           items: [
             {
+              label: 'Terms and Data Licence',
+              to: '/terms',
+            },
+            {
               label: 'Privacy Policy',
               to: '/privacy-policy',
             },

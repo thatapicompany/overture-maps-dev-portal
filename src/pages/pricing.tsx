@@ -124,7 +124,10 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     a: (
       <>
         Free is for non-commercial use. If you use the API in a product or service you sell, or for a business,
-        choose a paid plan. The Overture Maps data itself stays under its own open licences.
+        choose a paid plan. Paid plans cover commercial use of every kind, including storing results and
+        reselling them in your own products. We add no restrictions to the data itself: it stays under
+        Overture&apos;s open licences, on every plan. See <Link to="/terms#what-you-can-build">what you can build</Link>{' '}
+        and <Link to="/terms#attribution">how to credit the data</Link>.
       </>
     ),
   },
