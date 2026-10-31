@@ -19,11 +19,11 @@ Consult the [Open API documentation](/reference) for the full list of query para
 Query params:
 `lat`, `lng`, `radius`
 
-Example Request to GET all the 'categories=cafes' within 2000m of Bondi Beach:
+Example Request to GET all the 'categories=cafe' within 2000m of Bondi Beach:
 
 
 ```bash
-curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places?lat=-33.8910&lng=151.2769&radius=2000&categories=cafes' 
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places?lat=-33.8910&lng=151.2769&radius=2000&categories=cafe' 
 ```
 
 ### Categories
