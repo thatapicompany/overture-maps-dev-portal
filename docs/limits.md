@@ -30,7 +30,9 @@ Only successful requests count. Errors (`4xx`/`5xx`), including validation error
 
 ## Per-minute rate limit
 
-There is also a short per-minute limit. Going over it returns `429` with a message saying so; wait a minute and retry.
+There is also a per-minute limit on each endpoint: 60 requests a minute on the Free plan and 120 on paid plans, counted per account. Every response carries `X-RateLimit-Limit`, `X-RateLimit-Remaining` and `X-RateLimit-Reset` (seconds until the window resets). Going over returns `429` with `"error": "rate_limited"` and a `Retry-After` header; wait that many seconds and retry. Like other errors, these `429`s do not use up your monthly allowance.
+
+If you need a higher per-minute rate, [get in touch](/contact).
 
 ## Country-level place queries
 
