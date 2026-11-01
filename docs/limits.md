@@ -40,4 +40,4 @@ A `/places` query with a `country` and no `lat`/`lng` reads a whole country, so 
 
 ## The demo key
 
-`DEMO-API-KEY` is for trying the API out. It covers lat/lng searches within 10 km of a few demo cities (New York, London, Paris and Bondi Beach), returns small pages, and does not support country-level queries. [Sign up](https://account.overturemapsapi.com) for a free key to search anywhere.
+`DEMO-API-KEY` is for trying the API out. It covers lat/lng searches within 10 km of a few demo cities (New York, London, Paris and Bondi Beach), returns small pages, and does not support country-level queries. On `/divisions` it supports searches by `name` without geometry, or by `lat`/`lng` near a demo city. [Sign up](https://account.overturemapsapi.com) for a free key to search anywhere.
