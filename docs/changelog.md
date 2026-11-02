@@ -16,6 +16,31 @@ Overture releases roughly monthly (mid-month). New here? Start with the [introdu
 
 ---
 
+## 2026-10-21 · Data — Overture `2026-10-21.0` (schema v2.0.0)
+
+- **Places up 8.5% to 88.4M.** BrightQuery grew from 10.26M to 15.77M places, with the biggest additions in France (1.95M), the United Kingdom (1.45M) and Spain (1.23M). It now covers the UK, France, Spain, the Netherlands, Belgium, Switzerland, Austria, Sweden, Norway and Finland. Expect many new `/places` results in those countries.
+- **Three new sources.** Uberall adds 424,600 places across 217 countries, Birdeye adds 11,855 (mostly US) and OpenTravel adds 2,698 Hilton properties. If you filter or group on `sources`, you will see the new labels.
+- **Source switches without ID changes.** In those ten BrightQuery countries, 1,861,523 existing places now carry BrightQuery data in place of a previous Meta, Foursquare or Microsoft record. They keep their GERS IDs, so cached IDs stay valid, but any source counts you track for those providers will drop.
+- **Place IDs churned by 11.92%.** Overture added 8,335,526 places and removed 1,372,826. If you cache place IDs, expect some to have gone, so re-check stored IDs against [`/places`](./api-endpoints/places).
+- **`operating_status` coverage rose from 23.74% to 32.54%.** Status is now chosen by majority vote across contributing sources, and `sources` records which source supplied it. `open` grew 47.6% to 27.1M, `permanently_closed` grew 70.2% to 1.67M and `temporarily_closed` went from 29 to 3,496. Filtering on `operating_status=open` returns noticeably more places than last month.
+- **Addresses (still alpha upstream):** total up 0.23% to 475.3M. Uruguay's countrywide dataset was replaced by 19 departmental datasets from Direcciones Geográficas del Uruguay, so Uruguay `sources` labels on [`/addresses`](./api-endpoints/addresses) change, and `address_levels` coverage there rose from 85.76% to 100%. A refresh of the US National Address Database added 935,021 addresses (+1.11%), and New Caledonia grew 24.48% to 51,702.
+- **Base:** `infrastructure` +0.86%, `land` +0.93%, `water` +0.92%, `land_use` +0.62%, `land_cover` and `bathymetry` unchanged. The OSM cut-off is 2026-10-10. See [`/base`](./api-endpoints/base).
+- **Buildings are unchanged.** Overture re-promoted the September data, so [`/places/buildings`](./api-endpoints/places-buildings) returns the same 2.53bn buildings and 4.49M building parts as last month.
+- **Divisions** changed only slightly (`division` +0.27%, `division_area` +0.33%), with new Esri Community Maps name values. GERS churn is 0.45% for `division` and 0.56% for `division_area`.
+- **Transportation:** road length is up 254,743 km (+0.27%) and TomTom segments are up 1.54%. GERS churn is 0.70% for connectors and 0.83% for segments.
+- **No schema change.** The release stays on schema v2.0.0, and the post lists no breaking changes or deprecations. The API still serves `categories` as a field and filter derived from `taxonomy`.
+- Full upstream notes: [Overture 2026-10-21 release](https://docs.overturemaps.org/blog/2026/10/21/release-notes/).
+
+## November 2026 · API updates
+
+- **Monthly request limits are now enforced.** Each plan has an allowance and a refusal point. Between the two, requests work with an `X-Quota-Warning` header, and at the limit you get `429` with `monthly_quota_exceeded`. Every response carries `X-Quota-*` headers, and errors do not count. See [Usage limits](./limits).
+- **Per-minute limits follow your plan.** The limit is now counted per account rather than per IP: 60 requests a minute on Free and 120 on paid plans, with `X-RateLimit-*` headers and a `429` `rate_limited` error that includes `Retry-After`. See [Usage limits](./limits).
+- **Country-level `/places` queries need a paid plan.** A `country` with no `lat`/`lng` now returns `403` on the Free plan. Search by `lat`, `lng` and `radius` instead, with `country` as an extra filter if you like. See [Places](./api-endpoints/places).
+- **`/transportation` segments return line geometries.** See [Transportation](./api-endpoints/transportation).
+- **Clearer error for country-only calls to point endpoints.** `/buildings`, `/addresses`, `/base`, `/transportation` and `/places/buildings` need a `lat` and `lng`. A country-only call now gets a `400` saying so, where it used to return a `500`.
+- **Coordinates of `0` are valid.** Searches on the equator (`lat=0`) or the prime meridian (`lng=0`) were previously treated as having no location. They now filter by position as expected.
+- **Demo key on `/divisions`.** `DEMO-API-KEY` works for name searches without geometry, or `lat`/`lng` near a demo city. See [Divisions](./api-endpoints/divisions).
+
 ## 2026-10 · API: partial-name search
 
 - **New `name_prefix` filter on [`/places`](./api-endpoints/places).** Matches places whose name, or a word in it, starts with the text you pass, so it can back a type-ahead location field. Combine it with `lat`/`lng` and a small `limit` for the nearest matches first.
