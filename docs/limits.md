@@ -10,7 +10,7 @@ These limits apply to the hosted API at `api.overturemapsapi.com`. If you self-h
 
 ## Monthly requests
 
-Every plan includes a monthly allowance of requests. Past the allowance your requests keep working, with an `X-Quota-Warning` header, until you reach the plan's limit. At the limit the API returns `429` with `"error": "monthly_quota_exceeded"` and a `Retry-After` header, until 00:00 UTC on the 1st of next month. Each plan's allowance is on the [pricing page](/pricing), and your own numbers are in the headers below.
+Every plan includes a monthly allowance of requests. Past the allowance your requests keep working, with an `X-Quota-Warning` header, until you reach the plan's refusal point: 200 on Free, 2,000 on Premium, 6,000 on Growth and 20,000 on Scale. That margin is room to upgrade, not a second allowance. At the limit the API returns `429` with `"error": "monthly_quota_exceeded"` and a `Retry-After` header, until 00:00 UTC on the 1st of next month. Each plan's allowance is on the [pricing page](/pricing), and your own numbers are in the headers below.
 
 Every response to a key with a monthly limit carries (the demo key has none):
 
