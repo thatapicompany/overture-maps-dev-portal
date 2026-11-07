@@ -7,7 +7,7 @@ import styles from './pricing.module.css';
 
 // Plan details for the hosted API. Keep these in step with the plan
 // configuration the API enforces (see /docs/limits): when a plan's price,
-// allowance or key count changes, change it here too.
+// allowance, refusal point or key count changes, change it here too.
 const ACCOUNT_URL = 'https://account.overturemapsapi.com';
 const UPGRADE_URL = `${ACCOUNT_URL}/subscription`;
 
@@ -28,6 +28,7 @@ const PLANS: Plan[] = [
     tagline: 'For trying the API and non-commercial projects.',
     features: [
       '100 requests a month',
+      'Keeps working up to 200, then refused until the 1st',
       'Non-commercial use',
       '3 API keys',
       'Every endpoint, searched by lat/lng and radius (up to 25 km)',
@@ -42,6 +43,7 @@ const PLANS: Plan[] = [
     tagline: 'For a commercial product getting started.',
     features: [
       '1,000 requests a month',
+      'Keeps working up to 2,000, then refused until the 1st',
       'Commercial licence',
       '10 API keys',
       'Country-level place queries',
@@ -57,6 +59,7 @@ const PLANS: Plan[] = [
     tagline: 'For a product with steady daily use.',
     features: [
       '4,000 requests a month',
+      'Keeps working up to 6,000, then refused until the 1st',
       'Commercial licence',
       '15 API keys',
       'Country-level place queries',
@@ -71,6 +74,7 @@ const PLANS: Plan[] = [
     tagline: 'For high-volume commercial use.',
     features: [
       '10,000 requests a month',
+      'Keeps working up to 20,000, then refused until the 1st',
       'Commercial licence',
       '25 API keys',
       'Country-level place queries',
@@ -102,9 +106,11 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     q: 'What happens when I reach my monthly allowance?',
     a: (
       <>
-        Requests keep working for a while past the allowance, with an <code>X-Quota-Warning</code> header, and are
-        then refused with a <code>429</code> until 00:00 UTC on the 1st of next month. You can upgrade at any time
-        from your <Link href={UPGRADE_URL}>account</Link> to keep going.
+        Requests keep working past the allowance, with an <code>X-Quota-Warning</code> header, up to each plan&apos;s
+        refusal point: 200 on Free, 2,000 on Premium, 6,000 on Growth and 20,000 on Scale. They are then refused
+        with a <code>429</code> until 00:00 UTC on the 1st of next month. That margin is room to upgrade, not a
+        second allowance. You can upgrade at any time from your <Link href={UPGRADE_URL}>account</Link> and the
+        limit lifts within a minute.
       </>
     ),
   },
