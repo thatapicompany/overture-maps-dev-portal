@@ -55,7 +55,7 @@ Docs & site: https://www.overturemapsapi.com
 
 ## AI tools
 
-- MCP server for Claude, Cursor and other MCP clients: https://www.npmjs.com/package/@thatapicompany/overture-maps-mcp (tools: search_places, list_place_categories, list_place_countries, search_divisions, find_buildings)
+- MCP server for Claude, Cursor and other MCP clients (MCP Registry name: io.github.thatapicompany/overture-maps-mcp): https://www.npmjs.com/package/@thatapicompany/overture-maps-mcp (tools: search_places, list_place_categories, list_place_countries, search_divisions, find_buildings)
 - Errors return `{ statusCode, message, error? }`; the message says how to fix the request. On 429, wait for the `Retry-After` header.
 
 ## About

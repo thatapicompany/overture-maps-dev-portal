@@ -77,9 +77,7 @@ resp.raise_for_status()  # 4xx bodies are {"statusCode", "message"}; the message
 results = resp.json()
 print(resp.headers.get("Pagination-Count"), "results in total")
 for brand in results:
-    name = (brand.get("names") or {}).get("primary")
-    if name:  # places without a brand are counted under an empty name
-        print(name, brand.get("wikidata"), brand["counts"]["places"])
+    print((brand.get("names") or {}).get("primary"), brand.get("wikidata"), brand["counts"]["places"])
 ```
 
 Results are paginated: pass `page` (0-indexed) and `limit`, and read the total from the `Pagination-Count` header. See [Pagination](/docs/pagination) and [Usage limits](/docs/limits).

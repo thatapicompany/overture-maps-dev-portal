@@ -37,7 +37,7 @@ const PAGES = [
   {
     file: 'places-brands.md', path: '/places/brands',
     params: { ...LONDON, radius: 1000, limit: 20 },
-    loop: 'for brand in results:\n    name = (brand.get("names") or {}).get("primary")\n    if name:  # places without a brand are counted under an empty name\n        print(name, brand.get("wikidata"), brand["counts"]["places"])',
+    loop: 'for brand in results:\n    print((brand.get("names") or {}).get("primary"), brand.get("wikidata"), brand["counts"]["places"])',
   },
   {
     file: 'places-categories.md', path: '/places/categories',

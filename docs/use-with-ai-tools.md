@@ -24,7 +24,7 @@ All three need an API key. The public `DEMO-API-KEY` works for small searches ne
 
 ## MCP server (Claude, Cursor and other MCP clients)
 
-[`@thatapicompany/overture-maps-mcp`](https://www.npmjs.com/package/@thatapicompany/overture-maps-mcp) is an open-source [Model Context Protocol](https://modelcontextprotocol.io) server with five read-only tools: `search_places`, `list_place_categories`, `list_place_countries`, `search_divisions` and `find_buildings`. Its responses are compact summaries rather than full GeoJSON, so they don't fill up the assistant's context.
+[`@thatapicompany/overture-maps-mcp`](https://www.npmjs.com/package/@thatapicompany/overture-maps-mcp) is an open-source [Model Context Protocol](https://modelcontextprotocol.io) server with five read-only tools: `search_places`, `list_place_categories`, `list_place_countries`, `search_divisions` and `find_buildings`. Its responses are compact summaries rather than full GeoJSON, so they don't fill up the assistant's context. It's listed in the official [MCP Registry](https://registry.modelcontextprotocol.io) as `io.github.thatapicompany/overture-maps-mcp`, so clients that browse the registry can find and install it.
 
 ### Claude Desktop
 
