@@ -16,6 +16,13 @@ Overture releases roughly monthly (mid-month). New here? Start with the [introdu
 
 ---
 
+## 2026-11-13 · API — Better docs and spec for AI tools and SDK generators
+
+- **OpenAPI spec cleaned up.** Every operation now has a unique, readable `operationId` (`searchPlaces`, `listPlaceCategories`, `searchBuildings` and so on) and a description of when to use it, every query parameter has a type, and the `400`, `401`, `403` and `429` responses are documented with their error body and `Retry-After` header. The API key now applies to every operation, so generated clients send it. Get the spec at [`/api-docs.json`](https://api.overturemapsapi.com/api-docs.json) or [`www.overturemapsapi.com/openapi.json`](https://www.overturemapsapi.com/openapi.json).
+- **Parameter references and Python examples** on every endpoint page, generated from the spec.
+- **Docs for AI tools:** [`/llms-full.txt`](https://www.overturemapsapi.com/llms-full.txt) has every docs page in one file, any docs page is available as markdown by adding `.md` to its URL, and the new [Use with AI tools](./use-with-ai-tools) page covers the MCP server, custom GPTs and coding assistants.
+- **Wrong paths get directions.** A request to an endpoint that doesn't exist now returns JSON with links to the docs, the spec and `llms.txt`, instead of a bare `Cannot GET`.
+
 ## 2026-10-21 · Data — Overture `2026-10-21.0` (schema v2.0.0)
 
 - **Places up 8.5% to 88.4M.** BrightQuery grew from 10.26M to 15.77M places, with the biggest additions in France (1.95M), the United Kingdom (1.45M) and Spain (1.23M). It now covers the UK, France, Spain, the Netherlands, Belgium, Switzerland, Austria, Sweden, Norway and Finland. Expect many new `/places` results in those countries.

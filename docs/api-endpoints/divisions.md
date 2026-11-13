@@ -127,3 +127,55 @@ All division searches support `limit` + `page` with `Pagination-Count` / `Pagina
 1. **Search** as the user types: `GET /divisions?name=...&bbox=<viewport>&limit=10` — fast, metadata-only.
 2. **Select**: the chosen result's `bbox` lets you frame the map immediately.
 3. **Fetch**: `GET /divisions/{id}` for the full boundary polygon of the selected division only.
+
+{/* openapi:generated:start */}
+
+## Parameter reference
+
+Generated from the [OpenAPI spec](https://api.overturemapsapi.com/api-docs.json) (operation `searchDivisions`). Find countries, regions, localities and neighbourhoods by `name`, `country`, `subtype` or `admin_level`, or those containing or near a `lat`/`lng`. Use it to geocode a place name to a point or boundary before searching `/places`. Name searches omit boundary geometry by default (set `include_geometry=true`, or fetch one area with `GET /divisions/{id}`), because polygons can be megabytes each.
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `lat` | number |  | Latitude coordinate. Required if no country, name or bbox filter is provided. |
+| `lng` | number |  | Longitude coordinate. Required if no country, name or bbox filter is provided. |
+| `radius` | number | `1000` | Search radius in meters, defaulting to 1000 meters if not provided. |
+| `limit` | number | `100` | Limit on the number of results returned, defaulting to 100 if not provided. Use `page` to paginate for more. |
+| `page` | number | `0` | Page number for pagination (0-indexed), used together with `limit` as the page size. Responses include Pagination-Count (total matching results), Pagination-Page and Pagination-Limit headers. Defaults to 0. |
+| `format` | `json`, `csv`, `geojson` | `json` | Response format, defaulting to JSON. Options are "json", "csv", or "geojson". |
+| `includes` | list of string (comma-separated) |  | Array of fields to include in the properties field of the response, provided as a comma-separated string. Any fields not in the list will be excluded from the properties object. This is used to make the response lighter so your application is faster. |
+| `country` | string |  | ISO 3166 country code consisting of 2 characters. Required if lat/lng are not provided. |
+| `name` | string |  | Case-insensitive substring match against the division primary name and English common name. Also matches an exact division ID. |
+| `subtype` | list of string (comma-separated) |  | Filter by division subtype, provided as a comma-separated list (e.g. "county,locality"). |
+| `admin_level` | string |  | Filter by admin_level — the division's position in its country's hierarchy (0 = country). Provided as a comma-separated list (e.g. "1,2"). |
+| `bbox` | string |  | Bounding box filter as "xmin,ymin,xmax,ymax" (lng/lat order). Returns divisions whose bounding box intersects it. |
+| `include_geometry` | boolean |  | Whether to include the full polygon geometry in each result. Defaults to false for name searches (fetch geometry via GET /divisions/\{id\}) and true otherwise. Division polygons can be megabytes each, so leave this off for search boxes. |
+
+## Python example
+
+```python
+import requests
+
+resp = requests.get(
+    "https://api.overturemapsapi.com/divisions",
+    headers={"x-api-key": "DEMO-API-KEY"},  # use your own key outside the demo cities
+    params={
+        "name": "Camden",
+        "country": "GB",
+        "limit": 5,
+    },
+    timeout=30,
+)
+if resp.status_code == 429:
+    raise SystemExit(f"Rate limited, retry in {resp.headers['Retry-After']}s")
+resp.raise_for_status()  # 4xx bodies are {"statusCode", "message"}; the message says how to fix the request
+
+results = resp.json()
+print(resp.headers.get("Pagination-Count"), "results in total")
+for area in results:
+    props = area["properties"]
+    print(area["id"], props["names"]["primary"], props.get("subtype"))
+```
+
+Results are paginated: pass `page` (0-indexed) and `limit`, and read the total from the `Pagination-Count` header. See [Pagination](/docs/pagination) and [Usage limits](/docs/limits).
+
+{/* openapi:generated:end */}

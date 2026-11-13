@@ -14,18 +14,49 @@ Docs & site: https://www.overturemapsapi.com
 - Results are paginated with `limit` + `page`; totals are in the `Pagination-Count` header.
 - Output formats: `json` (default) and `geojson`.
 
+## API reference
+
+- OpenAPI spec (JSON, every operation described): https://api.overturemapsapi.com/api-docs.json (copy at https://www.overturemapsapi.com/openapi.json)
+- Every docs page as one file: https://www.overturemapsapi.com/llms-full.txt
+- Any docs page as markdown: add `.md` to its URL
+
+## Endpoints
+
+- GET /places: search places (POIs) by location, category, taxonomy, brand, name or country: https://www.overturemapsapi.com/docs/api-endpoints/places.md
+- GET /places/categories: category values and counts for an area or country: https://www.overturemapsapi.com/docs/api-endpoints/places-categories.md
+- GET /places/brands: brands (chains) and their place counts: https://www.overturemapsapi.com/docs/api-endpoints/places-brands.md
+- GET /places/countries: countries with place and brand counts: https://www.overturemapsapi.com/docs/api-endpoints/places-countries.md
+- GET /places/buildings: places with the footprint of the building they sit in: https://www.overturemapsapi.com/docs/api-endpoints/places-buildings.md
+- GET /buildings: building footprints with height and floors: https://www.overturemapsapi.com/docs/api-endpoints/buildings.md
+- GET /divisions and /divisions/{id}: countries, regions, localities and neighbourhoods, with boundaries: https://www.overturemapsapi.com/docs/api-endpoints/divisions.md
+- GET /addresses: address points near a location: https://www.overturemapsapi.com/docs/api-endpoints/addresses.md
+- GET /base: land use, land cover and water features: https://www.overturemapsapi.com/docs/api-endpoints/base.md
+- GET /transportation: road, rail and path segments: https://www.overturemapsapi.com/docs/api-endpoints/transportation.md
+
 ## Docs
 
-- Intro: https://www.overturemapsapi.com/docs/intro
-- What is Overture Maps (themes, licences, releases): https://www.overturemapsapi.com/docs/what-is-overture-maps
-- Places endpoint: https://www.overturemapsapi.com/docs/api-endpoints/places
-- Buildings endpoint: https://www.overturemapsapi.com/docs/api-endpoints/buildings
-- Pagination: https://www.overturemapsapi.com/docs/pagination
-- Usage limits: https://www.overturemapsapi.com/docs/limits
+- Intro: https://www.overturemapsapi.com/docs/intro.md
+- What is Overture Maps (themes, licences, releases): https://www.overturemapsapi.com/docs/what-is-overture-maps.md
+- Authentication: https://www.overturemapsapi.com/docs/authentication.md
+- Use with AI tools (MCP server, custom GPTs, coding assistants): https://www.overturemapsapi.com/docs/use-with-ai-tools.md
+- Pagination: https://www.overturemapsapi.com/docs/pagination.md
+- Usage limits: https://www.overturemapsapi.com/docs/limits.md
+- Enriched responses (brand details): https://www.overturemapsapi.com/docs/enriched-data.md
 - Pricing: https://www.overturemapsapi.com/pricing (Free $0 non-commercial, 100 requests/month; Premium $25/month, 1,000; Growth $50/month, 4,000; Scale $100/month, 10,000; paid plans include a commercial licence and country-level place queries)
-- Guides (e.g. build a local business directory): https://www.overturemapsapi.com/docs/guides/build-a-local-business-directory
 - Explorer (browse the data on a map, copy the API call): https://www.overturemapsapi.com/explorer
-- Full API reference (OpenAPI): https://www.overturemapsapi.com/reference
+
+## Guides
+
+- Build a local business directory: https://www.overturemapsapi.com/docs/guides/build-a-local-business-directory.md
+- Build a "what's near me" feature: https://www.overturemapsapi.com/docs/guides/build-a-whats-near-me-feature.md
+- Export Overture places to GeoJSON and CSV: https://www.overturemapsapi.com/docs/guides/export-overture-places-to-geojson-and-csv.md
+- Map every location of a retail chain: https://www.overturemapsapi.com/docs/guides/map-every-location-of-a-retail-chain.md
+- Profile a neighbourhood with Overture places data: https://www.overturemapsapi.com/docs/guides/profile-a-neighbourhood.md
+
+## AI tools
+
+- MCP server for Claude, Cursor and other MCP clients: https://www.npmjs.com/package/@thatapicompany/overture-maps-mcp (tools: search_places, list_place_categories, list_place_countries, search_divisions, find_buildings)
+- Errors return `{ statusCode, message, error? }`; the message says how to fix the request. On 429, wait for the `Retry-After` header.
 
 ## About
 
