@@ -97,6 +97,9 @@ const config: Config = {
     'docusaurus-theme-redoc',
   ],
 
+  // Markdown copies of the docs, llms-full.txt and openapi.json for AI tools.
+  plugins: ['./plugins/llms-txt.js'],
+
   themeConfig: {
     redoc: {
       tryItOutEnabled: true, // Enables the "Try it out" button

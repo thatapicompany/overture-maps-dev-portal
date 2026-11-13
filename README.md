@@ -53,3 +53,11 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+## OpenAPI spec and generated endpoint sections
+
+`openapi/overture-maps-api-openapi.json` is a copy of the production API's spec, and each page in `docs/api-endpoints/` has a parameter reference and Python example generated from it between `openapi:generated` markers. Don't edit those blocks by hand.
+
+The `Sync OpenAPI spec from production` workflow pulls the live spec hourly and commits any change, so API releases reach the docs on their own. To run it locally: copy a spec into `openapi/`, then `npm run openapi:sync` (or `npm run openapi:check` to see if anything is stale).
+
+The build also writes `/docs/<page>.md` copies, `/llms-full.txt` and `/openapi.json` (see `plugins/llms-txt.js`). `static/llms.txt` is hand-written.

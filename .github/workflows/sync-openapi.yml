@@ -1,0 +1,59 @@
+# Keeps the docs in step with the API that is actually in production.
+#
+# Pulls the live OpenAPI spec, and when it has changed, refreshes
+# openapi/overture-maps-api-openapi.json and the generated parameter
+# reference + Python example on each endpoint page, then commits to main
+# (which redeploys the site). Runs hourly, so a release shows up in the docs
+# within about an hour of reaching production. Run it by hand from the
+# Actions tab, or trigger it from another repo with a repository_dispatch
+# event of type "openapi-updated".
+name: Sync OpenAPI spec from production
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+  repository_dispatch:
+    types: [openapi-updated]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-openapi
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch the live spec
+        run: |
+          curl -fsS --retry 3 https://api.overturemapsapi.com/api-docs.json -o /tmp/live.json
+          # Same formatting as `npm run openapi:export` in the API repo, so
+          # an unchanged API produces no diff.
+          node -e "const fs=require('fs');const d=JSON.parse(fs.readFileSync('/tmp/live.json','utf8'));if(!d.paths||!d.paths['/places'])throw new Error('spec has no /places, refusing to sync');fs.writeFileSync('openapi/overture-maps-api-openapi.json',JSON.stringify(d,null,2)+'\n')"
+
+      - name: Regenerate endpoint pages
+        run: node scripts/sync-openapi-docs.mjs
+
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet; then
+            echo "Docs already match the live spec."
+            exit 0
+          fi
+          git --no-pager diff --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add openapi docs/api-endpoints
+          git commit -m "Sync OpenAPI spec and endpoint pages from production"
+          git push origin HEAD:main
