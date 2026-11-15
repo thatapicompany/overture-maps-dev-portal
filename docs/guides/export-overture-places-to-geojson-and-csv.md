@@ -118,7 +118,19 @@ For this first page of 25 bakeries, the response drops from 31,022 bytes to 12,8
 
 ## Step 4: Write GeoJSON and CSV files
 
-GeoJSON can be saved as it comes. For a CSV, flatten each feature into one row: name, category, coordinates, the first address, website and phone. The API returns JSON and GeoJSON, so do this conversion on your side. (`format=csv` appears in the OpenAPI reference, but in our tests it currently returns JSON.)
+GeoJSON can be saved as it comes. For a CSV, flatten each feature into one row: name, category, coordinates, the first address, website and phone. The API can also return a CSV itself (see the tip below), but one request is one page with a fixed set of columns. The script writes its own so it can join every page and choose the columns.
+
+:::tip Just want a quick CSV?
+
+Add `format=csv` to a search and the API answers with `text/csv`: one row per place, with `id`, `name`, `category`, `latitude`, `longitude`, the address fields, `website`, `phone` and `brand` first, then every other property. The `Pagination-Count` header still says how many places match, so you know whether there are more pages.
+
+```bash
+curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/places' \
+-d 'lat=48.8556' -d 'lng=2.3655' -d 'radius=800' -d 'categories=bakery' \
+-d 'format=csv' -d 'limit=25' -o marais-bakeries-page-1.csv
+```
+
+:::
 
 ```typescript
 import { writeFile } from "node:fs/promises";
