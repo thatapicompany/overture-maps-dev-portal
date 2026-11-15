@@ -68,7 +68,7 @@ Generated from the [OpenAPI spec](https://api.overturemapsapi.com/api-docs.json)
 | `radius` | number | `1000` | Search radius in meters, defaulting to 1000 meters if not provided. |
 | `limit` | number | `100` | Limit on the number of results returned, defaulting to 100 if not provided. Use `page` to paginate for more. |
 | `page` | number | `0` | Page number for pagination (0-indexed), used together with `limit` as the page size. Responses include Pagination-Count (total matching results), Pagination-Page and Pagination-Limit headers. Defaults to 0. |
-| `format` | `json`, `csv`, `geojson` | `json` | Response format, defaulting to JSON. Options are "json", "csv", or "geojson". |
+| `format` | `json`, `csv`, `geojson` | `json` | Response format, defaulting to JSON. Options are "json", "geojson" (a FeatureCollection) or "csv" (text/csv, one row per result: id, name, category, latitude, longitude, address fields, website, phone and brand where present, then every other property; shapes other than points in a final geometry column as GeoJSON). |
 | `includes` | list of string (comma-separated) |  | Array of fields to include in the properties field of the response, provided as a comma-separated string. Any fields not in the list will be excluded from the properties object. This is used to make the response lighter so your application is faster. |
 | `country` | string |  | ISO 3166 country code consisting of 2 characters. Required if lat/lng are not provided. |
 
