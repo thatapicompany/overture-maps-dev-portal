@@ -144,7 +144,7 @@ Try it without writing any code in the [Buildings demo](https://demo.overturemap
 - **Keep the radius tight.** Building polygons are much larger than place points. A few hundred metres in a city centre already returns hundreds of buildings, so start small and page with `limit` and `page` rather than using a large radius.
 - **Check `Pagination-Count` first.** Ask for `limit=1` to see how many buildings an area holds before pulling them all.
 - **Expect gaps in heights and floors.** Use a fallback, as in the example above, rather than assuming every building has a height.
-- **The demo key** works within 10 km of New York, London, Paris and Bondi Beach. [Sign up for a free key](https://account.overturemapsapi.com) to search anywhere.
+- **The demo key** works within 10 km of New York, London, Paris and Bondi Beach. [Sign up for a free key](https://app.overturemapsapi.com) to search anywhere.
 
 {/* openapi:generated:start */}
 

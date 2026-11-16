@@ -119,7 +119,7 @@ Each plan has a monthly request allowance and a per-minute rate limit, enforced 
 
 ## Payment, renewal and cancellation {#payment}
 
-Paid plans are billed monthly in advance through your [account](https://account.overturemapsapi.com) and renew automatically. You can cancel at any time. Your plan then runs to the end of the period you've paid for, and we don't refund part months. If we change a plan's price, we'll give you at least 30 days' notice by email before it applies to you. Prices exclude any taxes that apply.
+Paid plans are billed monthly in advance through your [account](https://app.overturemapsapi.com) and renew automatically. You can cancel at any time. Your plan then runs to the end of the period you've paid for, and we don't refund part months. If we change a plan's price, we'll give you at least 30 days' notice by email before it applies to you. Prices exclude any taxes that apply.
 
 ## No warranty {#no-warranty}
 

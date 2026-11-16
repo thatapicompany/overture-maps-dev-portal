@@ -20,7 +20,7 @@ There are three ways to put Overture Maps data in front of an AI assistant, depe
 | Call the API from a custom GPT or an agent framework | The [OpenAPI spec](#openapi-spec-custom-gpts-and-agent-frameworks) |
 | Write code against the API for you | The [docs for AI tools](#docs-for-coding-assistants) |
 
-All three need an API key. The public `DEMO-API-KEY` works for small searches near New York, London, Paris and Bondi Beach. [Sign up for a free key](https://account.overturemapsapi.com) to search anywhere.
+All three need an API key. The public `DEMO-API-KEY` works for small searches near New York, London, Paris and Bondi Beach. [Sign up for a free key](https://app.overturemapsapi.com) to search anywhere.
 
 ## MCP server (Claude, Cursor and other MCP clients)
 

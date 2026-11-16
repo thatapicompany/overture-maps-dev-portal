@@ -89,4 +89,4 @@ A `/places` query with a `country` and no `lat`/`lng` reads a whole country, the
 
 ## The demo key
 
-`DEMO-API-KEY` has no monthly count. It's for trying the API: lat/lng searches around a few demo cities (New York, London, Paris and Sydney), with small pages. [Sign up for a free key](https://account.overturemapsapi.com) to search anywhere.
+`DEMO-API-KEY` has no monthly count. It's for trying the API: lat/lng searches around a few demo cities (New York, London, Paris and Sydney), with small pages. [Sign up for a free key](https://app.overturemapsapi.com) to search anywhere.

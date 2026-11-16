@@ -76,7 +76,7 @@ curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/pla
 
 There are no files to download, no SQL, and no monthly re-import: the API moves to new Overture releases for you, and the [changelog](./changelog) records each one. On top of the raw data it adds brand logos and websites from Wikidata ([enriched data](./enriched-data)), filters such as `has_contact` and `operating_status`, and type-ahead search by name.
 
-`DEMO-API-KEY` works near New York, London, Paris and Sydney. [Sign up for a free key](https://account.overturemapsapi.com) to search anywhere.
+`DEMO-API-KEY` works near New York, London, Paris and Sydney. [Sign up for a free key](https://app.overturemapsapi.com) to search anywhere.
 
 ## Where to go next
 

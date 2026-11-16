@@ -9,7 +9,7 @@ import styles from './explorer.module.css';
 // The explorer itself is the world-places demo app (overture-maps-world-places-demo),
 // embedded here so this page can explain it and rank for "overture explorer".
 const DEMO_URL = 'https://demo.overturemapsapi.com';
-const ACCOUNT_URL = 'https://account.overturemapsapi.com';
+const ACCOUNT_URL = 'https://app.overturemapsapi.com';
 
 type View = { title: string; path: string; body: string; endpoint: string };
 
