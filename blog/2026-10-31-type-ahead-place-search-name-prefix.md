@@ -107,6 +107,6 @@ On your monthly allowance, each search that reaches the API counts as one reques
 
 ## Try it
 
-`DEMO-API-KEY` works near New York, London, Paris and Sydney, so the example above runs as it is. For anywhere else, [get a free API key](https://account.overturemapsapi.com). The full parameter reference is in the [`/places` docs](/docs/api-endpoints/places#by-partial-name-type-ahead), and if you're building a nearby list rather than a search box, see [Build a "what's near me" feature](/docs/guides/build-a-whats-near-me-feature).
+`DEMO-API-KEY` works near New York, London, Paris and Sydney, so the example above runs as it is. For anywhere else, [get a free API key](https://app.overturemapsapi.com). The full parameter reference is in the [`/places` docs](/docs/api-endpoints/places#by-partial-name-type-ahead), and if you're building a nearby list rather than a search box, see [Build a "what's near me" feature](/docs/guides/build-a-whats-near-me-feature).
 
 <sub>Map: OpenFreeMap, © OpenMapTiles, data © OpenStreetMap contributors.</sub>

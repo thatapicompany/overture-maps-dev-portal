@@ -14,7 +14,7 @@ keywords:
 
 The usual route to an Overture extract is to install DuckDB (or a plugin that needs it), query the GeoParquet files on S3 or Azure, and write the result out. That works, but it is a lot of setup when all you want is "every bakery in this neighbourhood, as a file I can open". With the Overture Maps API it's a few HTTP requests and a short script.
 
-This guide exports every bakery within 800 m of **Place des Vosges in Paris**. Paris is one of the demo key's cities, so everything below runs as written with `DEMO-API-KEY`. Use [your own key](https://account.overturemapsapi.com) to export anywhere else.
+This guide exports every bakery within 800 m of **Place des Vosges in Paris**. Paris is one of the demo key's cities, so everything below runs as written with `DEMO-API-KEY`. Use [your own key](https://app.overturemapsapi.com) to export anywhere else.
 
 ![58 bakeries within 800 m of Place des Vosges in Paris, plotted on a map, with a preview of the exported CSV](/img/guides/export-overture-places-to-geojson-and-csv.png)
 

@@ -275,4 +275,4 @@ On the Overture side, each `/places` call counts as one request against your [mo
 
 Part 2 joins the same GERS IDs to Tripadvisor locations for reviews, and part 3 covers Yelp. Each starts with a "what you're allowed to keep" section, because every provider draws that line differently.
 
-`DEMO-API-KEY` works near New York, London, Paris and Sydney, so the Overture half of this runs as written. For anywhere else, [get a free API key](https://account.overturemapsapi.com).
+`DEMO-API-KEY` works near New York, London, Paris and Sydney, so the Overture half of this runs as written. For anywhere else, [get a free API key](https://app.overturemapsapi.com).

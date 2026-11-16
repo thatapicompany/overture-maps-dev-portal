@@ -67,7 +67,7 @@ function HomepageHeader() {
           -
           <Link
             className="button button--secondary button--lg"
-            href="https://account.overturemapsapi.com">
+            href="https://app.overturemapsapi.com">
             Signup or Login for a Key
           </Link>
         </div>

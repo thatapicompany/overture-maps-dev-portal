@@ -8,8 +8,8 @@ import styles from './pricing.module.css';
 // Plan details for the hosted API. Keep these in step with the plan
 // configuration the API enforces (see /docs/limits): when a plan's price,
 // allowance, refusal point or key count changes, change it here too.
-const ACCOUNT_URL = 'https://account.overturemapsapi.com';
-const UPGRADE_URL = `${ACCOUNT_URL}/subscription`;
+const ACCOUNT_URL = 'https://app.overturemapsapi.com';
+const UPGRADE_URL = `${ACCOUNT_URL}/plan`;
 
 type Plan = {
   name: string;

@@ -141,7 +141,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://account.overturemapsapi.com',
+          href: 'https://app.overturemapsapi.com',
           label: 'Account',
           position: 'right',
         },
@@ -195,7 +195,7 @@ const config: Config = {
           items: [
             {
               label: 'Account',
-              href: 'https://account.overturemapsapi.com',
+              href: 'https://app.overturemapsapi.com',
             },
             {
               label: 'Pricing',

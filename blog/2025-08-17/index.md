@@ -55,7 +55,7 @@ Ready to explore? Visit the [live demo](https://demo.overturemapsapi.com) and st
 
 Want to build your own location-aware application? Getting started is simple:
 
-1. Get your free API key at [account.overturemapsapi.com](https://account.overturemapsapi.com)
+1. Get your free API key at [app.overturemapsapi.com](https://app.overturemapsapi.com)
 2. Explore our endpoints: Places search, categories, brands, and countries
 3. Check the documentation and use our demo as a reference implementation
 

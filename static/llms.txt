@@ -7,7 +7,7 @@ Docs & site: https://www.overturemapsapi.com
 
 ## Key concepts
 
-- Authenticate with an `x-api-key` header. A public `DEMO-API-KEY` is available for testing (lat/lng searches near a few demo cities). Free keys come from https://account.overturemapsapi.com.
+- Authenticate with an `x-api-key` header. A public `DEMO-API-KEY` is available for testing (lat/lng searches near a few demo cities). Free keys come from https://app.overturemapsapi.com.
 - Country-level place queries (`country` with no `lat`/`lng`) are paid plans only; Free and demo keys search by `lat`/`lng`/`radius` (up to 25 km). Each plan has a monthly request limit; responses carry `X-Quota-*` headers and a `429` with `Retry-After` when the limit is reached.
 - Filter places by `country` (ISO 3166-1 alpha-2), `categories`, hierarchy-aware `taxonomy`, `brand_name`/`brand_wikidata`, `lat`/`lng`/`radius`, `min_confidence`, and `operating_status`.
 - Contact fields (`websites`, `phones`, `emails`, `socials`) are returned by default. `has_contact` filters to places that have them. `enrichment_fields=brand` adds Wikidata brand details (logo, official site).
