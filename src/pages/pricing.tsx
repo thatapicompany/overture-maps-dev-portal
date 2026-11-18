@@ -43,7 +43,7 @@ const PLANS: Plan[] = [
     tagline: 'For a commercial product getting started.',
     features: [
       '1,000 requests a month',
-      'Keeps working up to 2,000, then refused until the 1st',
+      'Keeps working up to 1,200, then refused until the 1st',
       'Commercial licence',
       '10 API keys',
       'Country-level place queries',
@@ -59,7 +59,7 @@ const PLANS: Plan[] = [
     tagline: 'For a product with steady daily use.',
     features: [
       '4,000 requests a month',
-      'Keeps working up to 6,000, then refused until the 1st',
+      'Keeps working up to 4,800, then refused until the 1st',
       'Commercial licence',
       '15 API keys',
       'Country-level place queries',
@@ -74,7 +74,7 @@ const PLANS: Plan[] = [
     tagline: 'For high-volume commercial use.',
     features: [
       '10,000 requests a month',
-      'Keeps working up to 20,000, then refused until the 1st',
+      'Keeps working up to 12,000, then refused until the 1st',
       'Commercial licence',
       '25 API keys',
       'Country-level place queries',
@@ -107,7 +107,8 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     a: (
       <>
         Requests keep working past the allowance, with an <code>X-Quota-Warning</code> header, up to each plan&apos;s
-        refusal point: 200 on Free, 2,000 on Premium, 6,000 on Growth and 20,000 on Scale. They are then refused
+        refusal point: 200 on Free, 1,200 on Premium, 4,800 on Growth and 12,000 on Scale. These apply from
+        1 December 2026; until then the paid plans stop at 2,000, 6,000 and 20,000. Requests are then refused
         with a <code>429</code> until 00:00 UTC on the 1st of next month. That margin is room to upgrade, not a
         second allowance. You can upgrade at any time from your <Link href={UPGRADE_URL}>account</Link> and the
         limit lifts within a minute.

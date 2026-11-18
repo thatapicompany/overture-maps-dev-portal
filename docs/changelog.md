@@ -16,6 +16,12 @@ Overture releases roughly monthly (mid-month). New here? Start with the [introdu
 
 ---
 
+## 2026-11-18 · API — Paid-plan refusal points change on 1 December
+
+- **From 1 December 2026, paid plans keep serving up to 20% over the monthly allowance:** 1,200 requests on Premium, 4,800 on Growth and 12,000 on Scale. Until then the refusal points stay at 2,000, 6,000 and 20,000. The allowances themselves (1,000, 4,000 and 10,000) and the Free plan (100, refused at 200) do not change.
+- **How to tell where you are:** every response carries `X-Quota-Limit`, `X-Quota-Hard-Limit` and `X-Quota-Used`, and `X-Quota-Warning` appears once you pass the allowance. See [Usage limits](./limits).
+- **Need more than your plan allows?** Upgrade from your [account](https://app.overturemapsapi.com/plan), or [get in touch](/contact) for a larger plan.
+
 ## 2026-11-13 · API — Better docs and spec for AI tools and SDK generators
 
 - **OpenAPI spec cleaned up.** Every operation now has a unique, readable `operationId` (`searchPlaces`, `listPlaceCategories`, `searchBuildings` and so on) and a description of when to use it, every query parameter has a type, and the `400`, `401`, `403` and `429` responses are documented with their error body and `Retry-After` header. The API key now applies to every operation, so generated clients send it. Get the spec at [`/api-docs.json`](https://api.overturemapsapi.com/api-docs.json) or [`www.overturemapsapi.com/openapi.json`](https://www.overturemapsapi.com/openapi.json).
