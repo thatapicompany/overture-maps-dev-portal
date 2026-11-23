@@ -74,20 +74,72 @@
   font-size: 1.1rem;
 }
 
-.explorerShot {
-  display: block;
+.explorerTabs {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  margin-bottom: 1rem;
+  border-radius: 999px;
+  background: var(--ifm-color-emphasis-200);
+}
+
+.explorerTab {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.4rem 1.1rem;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.explorerTabActive {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.explorerFrame {
   max-width: 1140px;
   margin: 0 auto;
+}
+
+.explorerShot {
+  position: relative;
+  display: block;
+  aspect-ratio: 1440 / 805;
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  background: var(--ifm-color-emphasis-100);
 }
 
-.explorerShot img {
-  display: block;
+.explorerImage {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.explorerImage.explorerImageActive {
+  opacity: 1;
+}
+
+.explorerCaption {
+  min-height: 3rem;
+  max-width: 40rem;
+  margin: 1rem auto 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .explorerImage {
+    transition: none;
+  }
 }
 
 .explorerButton {

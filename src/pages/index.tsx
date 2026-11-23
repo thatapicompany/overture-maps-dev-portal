@@ -1,3 +1,4 @@
+import {useEffect, useState} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Head from '@docusaurus/Head';
@@ -52,8 +53,8 @@ function HomepageHeader() {
         <p className={clsx('hero__subtitle', styles.heroSubtitle)}>
           Places, buildings, addresses and boundaries from the Overture Maps
           Foundation&apos;s open data, searched by location, name or category
-          through one hosted API. Independent and open source, from That API
-          Company.
+          through one hosted API. Independent and open source, from
+          ThatAPICompany.
         </p>
         <div className={styles.buttons}>
           <Link
@@ -80,8 +81,55 @@ function HomepageHeader() {
   );
 }
 
-// A still of the Explorer for now; an embedded, live Explorer comes later.
+// Stills of the three most-used Explorer views, shown in turn. A live,
+// embedded Explorer can replace this later.
+const EXPLORER_VIEWS = [
+  {
+    key: 'places',
+    label: 'Places',
+    caption: 'Search by category, brand or name around any point, with the API call shown above the map.',
+    alt: 'Pharmacies in Lower Manhattan in the Overture Maps API Explorer, with the API call shown above the map',
+  },
+  {
+    key: 'brands',
+    label: 'Brands',
+    caption: 'See the chains near any point, with logos, websites and parent companies from Wikidata.',
+    alt: 'Brands near Lower Manhattan in the Overture Maps API Explorer, listed with their logos and websites and mapped',
+  },
+  {
+    key: 'buildings',
+    label: 'Buildings',
+    caption: 'Building footprints in 3D, extruded by height or floor count.',
+    alt: 'Overture building footprints in Lower Manhattan, shown in 3D by height in the Overture Maps API Explorer',
+  },
+];
+
+const ROTATE_MS = 5000;
+
 function ExplorerPreview() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [stopped, setStopped] = useState(false);
+
+  useEffect(() => {
+    // No movement for people who have asked for less of it.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) setStopped(true);
+  }, []);
+
+  useEffect(() => {
+    if (paused || stopped) return undefined;
+    const timer = window.setInterval(
+      () => setActive((i) => (i + 1) % EXPLORER_VIEWS.length),
+      ROTATE_MS,
+    );
+    return () => window.clearInterval(timer);
+  }, [paused, stopped]);
+
+  const choose = (i: number) => {
+    setActive(i);
+    setStopped(true);
+  };
+
   return (
     <section className={styles.explorer}>
       <div className="container">
@@ -92,17 +140,45 @@ function ExplorerPreview() {
           The Explorer puts Overture places, brands, buildings and boundaries
           on a live map, and shows the API call behind every view.
         </p>
-        <Link to="/explorer" className={styles.explorerShot}>
-          <img
-            src="/img/explorer-buildings.webp"
-            srcSet="/img/explorer-buildings.webp 1440w, /img/explorer-buildings@2x.webp 2880w"
-            sizes="(max-width: 1200px) 100vw, 1140px"
-            width={1440}
-            height={805}
-            loading="lazy"
-            alt="Overture building footprints in Lower Manhattan, shown in 3D by height in the Overture Maps API Explorer"
-          />
-        </Link>
+        <div className={styles.explorerTabs} role="tablist" aria-label="Explorer views">
+          {EXPLORER_VIEWS.map((view, i) => (
+            <button
+              key={view.key}
+              type="button"
+              role="tab"
+              aria-selected={i === active}
+              className={clsx(styles.explorerTab, i === active && styles.explorerTabActive)}
+              onClick={() => choose(i)}>
+              {view.label}
+            </button>
+          ))}
+        </div>
+        <div
+          className={styles.explorerFrame}
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          onFocus={() => setPaused(true)}
+          onBlur={() => setPaused(false)}>
+          <Link to="/explorer" className={styles.explorerShot} aria-label="Open the Explorer">
+            {EXPLORER_VIEWS.map((view, i) => (
+              <img
+                key={view.key}
+                src={`/img/explorer-${view.key}.webp`}
+                srcSet={`/img/explorer-${view.key}.webp 1440w, /img/explorer-${view.key}@2x.webp 2880w`}
+                sizes="(max-width: 1200px) 100vw, 1140px"
+                width={1440}
+                height={805}
+                loading={i === 0 ? 'eager' : 'lazy'}
+                alt={view.alt}
+                aria-hidden={i !== active}
+                className={clsx(styles.explorerImage, i === active && styles.explorerImageActive)}
+              />
+            ))}
+          </Link>
+        </div>
+        <p className={styles.explorerCaption} aria-live="polite">
+          {EXPLORER_VIEWS[active].caption}
+        </p>
         <div className={styles.explorerButton}>
           <Link className="button button--primary button--lg" to="/explorer">
             Open the Explorer
