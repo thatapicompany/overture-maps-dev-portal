@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Head from '@docusaurus/Head';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
@@ -44,38 +43,77 @@ const STRUCTURED_DATA = {
 };
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className={clsx('hero__title', styles.heroTitle)}>
-          {siteConfig.title}
+          Overture Maps data, ready to query
         </Heading>
-        <p className={clsx('hero__subtitle', styles.heroSubtitle)}>{siteConfig.tagline}</p>
+        <p className={clsx('hero__subtitle', styles.heroSubtitle)}>
+          Places, buildings, addresses and boundaries from the Overture Maps
+          Foundation&apos;s open data, searched by location, name or category
+          through one hosted API. Independent and open source, from That API
+          Company.
+        </p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
-            href="https://demo.overturemapsapi.com">
-            Live Demo
+            className={clsx('button button--lg', styles.ctaPrimary)}
+            href="https://app.overturemapsapi.com">
+            Get a free API key
           </Link>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
+          <Link className={clsx('button button--lg', styles.ctaSecondary)} to="/explorer">
+            Try the Explorer
+          </Link>
+          <Link className={clsx('button button--lg', styles.ctaSecondary)} to="/docs/intro">
             Docs & Guides
           </Link>
-          <Link
-            className="button button--secondary button--lg"
-            href="https://app.overturemapsapi.com">
-            Signup or Login for a Key
-          </Link>
         </div>
+        <p className={styles.licenceLine}>
+          Free for non-commercial projects. Commercial use of the API needs
+          a <Link to="/pricing">paid plan</Link>, from $25 a month. The data
+          stays open: whatever you retrieve is yours to keep
+          under <Link to="/terms#data-licences">Overture&apos;s licences</Link>,
+          on any plan.
+        </p>
       </div>
     </header>
   );
 }
 
+// A still of the Explorer for now; an embedded, live Explorer comes later.
+function ExplorerPreview() {
+  return (
+    <section className={styles.explorer}>
+      <div className="container">
+        <Heading as="h2" className={styles.explorerTitle}>
+          See the data before you sign up
+        </Heading>
+        <p className={styles.explorerText}>
+          The Explorer puts Overture places, brands, buildings and boundaries
+          on a live map, and shows the API call behind every view.
+        </p>
+        <Link to="/explorer" className={styles.explorerShot}>
+          <img
+            src="/img/explorer-buildings.webp"
+            srcSet="/img/explorer-buildings.webp 1440w, /img/explorer-buildings@2x.webp 2880w"
+            sizes="(max-width: 1200px) 100vw, 1140px"
+            width={1440}
+            height={805}
+            loading="lazy"
+            alt="Overture building footprints in Lower Manhattan, shown in 3D by height in the Overture Maps API Explorer"
+          />
+        </Link>
+        <div className={styles.explorerButton}>
+          <Link className="button button--primary button--lg" to="/explorer">
+            Open the Explorer
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
       title={HOMEPAGE_TITLE}
@@ -86,6 +124,7 @@ export default function Home(): JSX.Element {
       </Head>
       <HomepageHeader />
       <main>
+        <ExplorerPreview />
         <div className="container" style={{ textAlign: 'center', marginTop: '20px' }}>
           <a href="https://overturemaps.org" target="_blank" rel="noopener noreferrer">
             Find out more about the Overture Maps Foundation here...

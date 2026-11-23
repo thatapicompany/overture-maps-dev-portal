@@ -19,6 +19,81 @@
   margin-top: 1.5rem;
 }
 
+/* One clear call to action, two quieter ones. */
+.ctaPrimary {
+  background: #fff;
+  border: 2px solid #fff;
+  color: var(--ifm-color-primary-darkest);
+  font-weight: 700;
+}
+
+.ctaPrimary:hover {
+  background: #f2f7f4;
+  color: var(--ifm-color-primary-darkest);
+  text-decoration: none;
+}
+
+.ctaSecondary {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  color: #fff;
+}
+
+.ctaSecondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  text-decoration: none;
+}
+
+.licenceLine {
+  max-width: 40rem;
+  margin: 1.5rem auto 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.92;
+}
+
+.licenceLine a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.explorer {
+  padding: 3rem 0 1rem;
+  text-align: center;
+}
+
+.explorerTitle {
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.explorerText {
+  max-width: 38rem;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+}
+
+.explorerShot {
+  display: block;
+  max-width: 1140px;
+  margin: 0 auto;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.explorerShot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.explorerButton {
+  margin-top: 1.5rem;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2.5rem 1rem;
