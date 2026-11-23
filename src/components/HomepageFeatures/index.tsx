@@ -34,12 +34,16 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Use the API to make Amazing things',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    png: '/img/someone-coding-a-geo-app.webp',
+    title: 'Ready for your AI assistant',
+    png: '/img/ai-assistant.svg',
     description: (
       <>
-        If you have an API that will return "All the Starbucks in the US", or "All the buildings in New York City", or "All the schools in the UK", what will you build with it?
+        Building with Claude, ChatGPT or Cursor? Point it at
+        our <a href="/llms.txt">llms.txt</a> and OpenAPI spec, or connect the
+        open-source MCP server so it can search places, buildings and
+        boundaries for you.
+        <br/><br/>
+        <a href="/docs/use-with-ai-tools">Set it up in a few minutes</a>.
       </>
     ),
   },
