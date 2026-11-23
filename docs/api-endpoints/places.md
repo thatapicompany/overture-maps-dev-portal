@@ -200,7 +200,7 @@ Generated from the [OpenAPI spec](https://api.overturemapsapi.com/api-docs.json)
 | `page` | integer | `0` | Page number for pagination (0-indexed), used together with `limit` as the page size. Responses include Pagination-Count (total matching results), Pagination-Page and Pagination-Limit headers. Defaults to 0. |
 | `format` | `json`, `csv`, `geojson` | `json` | Response format, defaulting to JSON. Options are "json", "geojson" (a FeatureCollection) or "csv" (text/csv, one row per result: id, name, category, latitude, longitude, address fields, website, phone and brand where present, then every other property; shapes other than points in a final geometry column as GeoJSON). |
 | `includes` | string |  | Array of fields to include in the properties field of the response, provided as a comma-separated string. Any fields not in the list will be excluded from the properties object. This is used to make the response lighter so your application is faster. |
-| `country` | string |  | ISO 3166 country code consisting of 2 characters. Required if lat/lng are not provided. |
+| `country` | string |  | ISO 3166 country code consisting of 2 characters. Required if lat/lng are not provided. A country-level query (country without lat/lng) needs a paid plan and at least one narrowing filter: categories, taxonomy, brand_name, brand_wikidata, name or name_prefix. |
 | `source` | string |  | Filter places to only those with a source dataset matching this value. |
 | `brand_wikidata` | string |  | Wikidata brand ID associated with the place. |
 | `brand_name` | string |  | Brand name associated with the place. |
