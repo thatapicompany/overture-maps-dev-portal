@@ -16,9 +16,9 @@ Every Overture place carries a `confidence` score between 0 and 1, and `/places`
 
 This guide measures what each threshold does around **Covent Garden in London**, with real counts from the API, so you can choose with numbers instead of guesswork. London is one of the demo key's cities, so every request below works as written with `DEMO-API-KEY`. No GeoParquet download or DuckDB needed.
 
-![Food and drink places within 250 m of Covent Garden piazza, coloured by confidence: 264 at 0.9 and above, 150 from 0.7 to 0.9, and 68 below 0.7](/img/guides/choose-a-min-confidence-for-overture-places.png)
+![Food and drink places within 250 m of Covent Garden piazza, coloured by confidence: 265 at 0.9 and above, 149 from 0.7 to 0.9, and 64 below 0.7](/img/guides/choose-a-min-confidence-for-overture-places.png)
 
-<sub>482 food and drink places from live `/places` responses within 250 m of Covent Garden piazza, coloured by `confidence`. Map: OpenFreeMap, © OpenMapTiles, data © OpenStreetMap contributors.</sub>
+<sub>478 food and drink places from live `/places` responses within 250 m of Covent Garden piazza, coloured by `confidence`. Map: OpenFreeMap, © OpenMapTiles, data © OpenStreetMap contributors.</sub>
 
 ## What you'll build
 
@@ -37,10 +37,10 @@ curl -s -D - -o /dev/null -H "x-api-key: DEMO-API-KEY" -G 'https://api.overturem
 ```
 
 ```
-pagination-count: 7091
+pagination-count: 7637
 ```
 
-That's 7,091 places within 250 m of the piazza with no filter at all. It looks high for a few streets, and Step 3 explains why. Each count is a normal request and counts towards your [monthly allowance](/docs/limits), but at one result per request it costs very little.
+That's 7,637 places within 250 m of the piazza with no filter at all. It looks high for a few streets, and Step 3 explains why. Each count is a normal request and counts towards your [monthly allowance](/docs/limits), but at one result per request it costs very little.
 
 ## Step 2: Compare thresholds
 
@@ -48,21 +48,21 @@ Run the same count with different `min_confidence` values, once for every place 
 
 | `min_confidence` | All places (250 m) | Food and drink (250 m) |
 | --- | --- | --- |
-| `0` | 7,489 | 517 |
-| not set (default `0.5`) | 7,091 | 482 |
-| `0.6` | 2,393 | 433 |
-| `0.7` | 1,887 | 414 |
-| `0.8` | 1,370 | 307 |
-| `0.9` | 1,018 | 264 |
-| `0.95` | 682 | 238 |
+| `0` | 8,062 | 534 |
+| not set (default `0.5`) | 7,637 | 478 |
+| `0.6` | 2,446 | 429 |
+| `0.7` | 1,891 | 414 |
+| `0.8` | 1,382 | 316 |
+| `0.9` | 1,015 | 265 |
+| `0.95` | 681 | 242 |
 
 Three things stand out.
 
-**The default is already 0.5.** Leaving `min_confidence` out gives the same 7,091 as `min_confidence=0.5`. To see the records below 0.5, pass `min_confidence=0` explicitly: that adds 398 places here.
+**The default is already 0.5.** Leaving `min_confidence` out gives the same 7,637 as `min_confidence=0.5`. To see the records below 0.5, pass `min_confidence=0` explicitly: that adds 425 places here.
 
-**Most of the drop happens just above 0.5.** `min_confidence=0.51` returns 2,843, so 4,248 of the 7,091 places have a confidence from 0.5 up to 0.51. Within the food and drink results, 42 places score exactly 0.5.
+**Most of the drop happens just above 0.5.** `min_confidence=0.51` returns 2,930, so 4,707 of the 7,637 places have a confidence from 0.5 up to 0.51. Within the food and drink results, 43 places score exactly 0.5.
 
-**Categories behave very differently.** Raising the threshold to 0.7 keeps 27% of all places but 86% of food and drink. Here, most of the low scores belong to company registrations rather than venues (Step 3). Check the category you actually care about before choosing a number.
+**Categories behave very differently.** Raising the threshold to 0.7 keeps 25% of all places but 87% of food and drink. Here, most of the low scores belong to company registrations rather than venues (Step 3). Check the category you actually care about before choosing a number.
 
 ## Step 3: See what low confidence means here
 
@@ -74,29 +74,29 @@ curl -s -D - -o /dev/null -H "x-api-key: DEMO-API-KEY" -G 'https://api.overturem
 ```
 
 ```
-pagination-count: 4769
+pagination-count: 5250
 ```
 
-4,769 places share that single point. They are company registrations, most often filed as `corporate_or_business_office` or `professional_service`, and a few as bars and coffee shops. In a sample of 250 of them, every one came from a single source, BrightQuery. That one point accounts for 4,769 of the 7,091 places in Step 1. Raising the threshold thins it out but doesn't clear it:
+5,250 places share that single point. They are company registrations, most often filed as `corporate_or_business_office` or `professional_service`, and a few as bars and coffee shops. In a sample of 275 of them, every one came from a single source, BrightQuery. That one point accounts for 5,250 of the 7,637 places in Step 1. Raising the threshold thins it out but doesn't clear it:
 
 | Filter at the Shelton Street point (5 m) | Places |
 | --- | --- |
-| none | 4,769 |
-| `min_confidence=0.7` | 307 |
-| `min_confidence=0.9` | 195 |
-| `has_contact=phone,website` | 4,274 |
+| none | 5,250 |
+| `min_confidence=0.7` | 315 |
+| `min_confidence=0.9` | 191 |
+| `has_contact=phone,website` | 4,689 |
 
-**`has_contact` doesn't help with this.** Company records usually carry a phone number or website, so 4,274 of the 4,769 pass `has_contact=phone,website`. Across the whole 250 m radius, 6,421 of the 7,091 places do. Use `has_contact` when you need people to be able to reach a place, as in [Build a "what's near me" feature](./build-a-whats-near-me-feature#step-6-only-show-places-people-can-reach), but don't rely on it to remove junk.
+**`has_contact` doesn't help with this.** Company records usually carry a phone number or website, so 4,689 of the 5,250 pass `has_contact=phone,website`. Across the whole 250 m radius, 6,888 of the 7,637 places do. Use `has_contact` when you need people to be able to reach a place, as in [Build a "what's near me" feature](./build-a-whats-near-me-feature#step-6-only-show-places-people-can-reach), but don't rely on it to remove junk.
 
 ## Step 4: Know what you lose
 
-Low confidence doesn't mean fake. Among the 68 food and drink places below 0.7 are well-known restaurants and bars on Henrietta Street and Floral Street, such as Frenchie Covent Garden, The Petersham and Mrs Riot, all scored at 0.5. Raise the threshold to 0.7 and they disappear from your results.
+Low confidence doesn't mean fake. Among the 64 food and drink places below 0.7 are well-known restaurants and bars on Henrietta Street and Floral Street, such as Frenchie Covent Garden, The Petersham and Mrs Riot, all scored at 0.5. Raise the threshold to 0.7 and they disappear from your results.
 
-The `sources` array on each place shows why. Of the 68 places below 0.7, 47 come from a single source, BrightQuery. Of the 264 at 0.9 and above, 181 include Meta as a source, 62 of them together with BrightQuery. Here's one, shortened:
+The `sources` array on each place shows why. Of the 64 places below 0.7, 48 come from a single source, BrightQuery. Of the 265 at 0.9 and above, 179 include Meta as a source, 61 of them together with BrightQuery. Here's one, shortened:
 
 ```json
 "sources": [
-  { "property": "", "dataset": "meta", "confidence": 0.9744282364845276 },
+  { "property": "", "dataset": "meta", "confidence": 0.9697698354721069 },
   { "property": "/properties/operating_status", "dataset": "BrightQuery", "confidence": null },
   { "property": "/properties/confidence", "dataset": "Overture", "confidence": null }
 ]
@@ -144,12 +144,12 @@ export function dropStacks(features: Feature[], maxPerPoint = 25): Feature[] {
 
 const coventGarden = { lat: "51.5117", lng: "-0.1240", radius: "250" };
 console.log(await compareThresholds(coventGarden));
-// { '0': 7489, '0.5': 7091, '0.7': 1887, '0.9': 1018 }
+// { '0': 8062, '0.5': 7637, '0.7': 1891, '0.9': 1015 }
 console.log(await compareThresholds({ ...coventGarden, taxonomy: "food_and_drink" }));
-// { '0': 517, '0.5': 482, '0.7': 414, '0.9': 264 }
+// { '0': 534, '0.5': 478, '0.7': 414, '0.9': 265 }
 ```
 
-To test `dropStacks`, we fetched all 1,018 places at `min_confidence=0.9` (41 pages of 25 with the demo key, see [Pagination](/docs/pagination)). One point holds 195 of them, the Shelton Street address, and the next busiest point holds 10. `dropStacks(features)` returns 823: everything except that stack. A limit of 25 records per point clears it and leaves busy real buildings alone. Adjust it if you work somewhere with large shopping centres or office towers.
+To test `dropStacks`, we fetched all 1,015 places at `min_confidence=0.9` (41 pages of 25 with the demo key, see [Pagination](/docs/pagination)). One point holds 191 of them, the Shelton Street address, and the next busiest point holds 9. `dropStacks(features)` returns 824: everything except that stack. A limit of 25 records per point clears it and leaves busy real buildings alone. Adjust it if you work somewhere with large shopping centres or office towers.
 
 ## Step 6: Pick a threshold for your feature
 
