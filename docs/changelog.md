@@ -16,6 +16,22 @@ Overture releases roughly monthly (mid-month). New here? Start with the [introdu
 
 ---
 
+## 2026-11-18 · Data — Overture `2026-11-18.0` (schema v2.0.0)
+
+- **Rolling out.** This release is not in the API yet: queries still return `2026-10-21.0` data. This entry describes what will change once it lands.
+- **Places up 2.12% to 90.3M.** BrightQuery grew 6.36% to 16.77M places, Meta 1.60% to 61.27M and Uberall 15.75% to 491,470.
+- **Phone and address formats are now consistent.** Overture now normalises every source: `addresses[].country` is an ISO 3166-1 alpha-2 code, `addresses[].region` is an ISO 3166-2 code (or `null` if it can't be matched), and `phones` are in E.164 format, with unparseable numbers dropped. 57,292,153 places (64.80%) carry changed data as a result, mostly in addresses and phones. They keep their GERS IDs, but if you parse or match on `phones` or `region` strings from [`/places`](./api-endpoints/places), check your code against the new formats.
+- **Place IDs churned by 6.55%.** Overture added 3,835,684 places and removed 1,958,051. If you cache place IDs, re-check stored IDs against [`/places`](./api-endpoints/places).
+- **PinMeTo records now have a fixed confidence of 0.9.** Places with PinMeTo as their main source fell 11.33%, from 170,156 to 150,879. If you filter with `min_confidence` above 0.9, PinMeTo places will drop out.
+- **`operating_status`:** `open` grew 5.74% to 28.66M, `permanently_closed` fell 4.89% to 1.59M and `temporarily_closed` went from 3,496 to 4,653.
+- **Buildings up 10.3M to 2.54bn.** A refreshed Esri Community Maps extract added 5,344,832 buildings, and building parts grew 4.09% to 4.67M. Machine-learned footprints that overlap inland water (rivers, lakes, canals, reservoirs) are now removed, not only those in the sea. `sources[].license` is now filled in for Google Open Buildings, Zenodo, Instituto Geográfico Nacional (España) and City of Vancouver, while `sources[].update_time` is now `null` for Google Open Buildings and Zenodo. Applies to [`/buildings`](./api-endpoints/buildings) and [`/places/buildings`](./api-endpoints/places-buildings).
+- **Addresses (still alpha upstream):** total down 0.01% to 475.2M. All 550,972 Latvian addresses have new GERS IDs, no longer repeat the postcode inside `address_levels` (it stays in `postcode`), and now credit the State Land Service (Valsts zemes dienests). Empty `address_levels` arrays are now `null`. Riverside County, California fell 13.91% to 811,215 after the upstream source dropped records without a house number. Address IDs churned by 0.99%. See [`/addresses`](./api-endpoints/addresses).
+- **Base:** `infrastructure` +0.91%, `land` +1.26%, `water` +0.48%, `land_use` +0.71%, `land_cover` and `bathymetry` unchanged. Ocean and land polygons use refreshed OpenStreetMap coastlines, and the OSM cut-off is 2026-11-06. See [`/base`](./api-endpoints/base).
+- **Divisions** changed only slightly (`division` +0.29%, `division_area` +0.34%, `division_boundary` -0.01%).
+- **Transportation:** road length is up 249,758 km (+0.27%) and TomTom segments are up 2.24%. GERS churn is 0.71% for connectors and 0.80% for segments. See [`/transportation`](./api-endpoints/transportation).
+- **No schema change.** The release stays on schema v2.0.0, and the post lists no breaking changes or deprecations.
+- Full upstream notes: [Overture 2026-11-18 release](https://docs.overturemaps.org/blog/2026/11/18/release-notes/).
+
 ## 2026-11-18 · API — Paid-plan refusal points change on 1 December
 
 - **From 1 December 2026, paid plans keep serving up to 20% over the monthly allowance:** 1,200 requests on Premium, 4,800 on Growth and 12,000 on Scale. Until then the refusal points stay at 2,000, 6,000 and 20,000. The allowances themselves (1,000, 4,000 and 10,000) and the Free plan (100, refused at 200) do not change.
