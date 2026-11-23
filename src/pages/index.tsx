@@ -93,7 +93,7 @@ const EXPLORER_VIEWS = [
   {
     key: 'brands',
     label: 'Brands',
-    caption: 'See the chains near any point, with logos, websites and parent companies from Wikidata.',
+    caption: 'See the chains near any point. We match Overture places to Wikidata and add each brand\'s logo, website and parent company.',
     alt: 'Brands near Lower Manhattan in the Overture Maps API Explorer, listed with their logos and websites and mapped',
   },
   {
