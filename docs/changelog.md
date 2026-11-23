@@ -18,7 +18,6 @@ Overture releases roughly monthly (mid-month). New here? Start with the [introdu
 
 ## 2026-11-18 · Data — Overture `2026-11-18.0` (schema v2.0.0)
 
-- **Rolling out.** This release is not in the API yet: queries still return `2026-10-21.0` data. This entry describes what will change once it lands.
 - **Places up 2.12% to 90.3M.** BrightQuery grew 6.36% to 16.77M places, Meta 1.60% to 61.27M and Uberall 15.75% to 491,470.
 - **Phone and address formats are now consistent.** Overture now normalises every source: `addresses[].country` is an ISO 3166-1 alpha-2 code, `addresses[].region` is an ISO 3166-2 code (or `null` if it can't be matched), and `phones` are in E.164 format, with unparseable numbers dropped. 57,292,153 places (64.80%) carry changed data as a result, mostly in addresses and phones. They keep their GERS IDs, but if you parse or match on `phones` or `region` strings from [`/places`](./api-endpoints/places), check your code against the new formats.
 - **Place IDs churned by 6.55%.** Overture added 3,835,684 places and removed 1,958,051. If you cache place IDs, re-check stored IDs against [`/places`](./api-endpoints/places).
