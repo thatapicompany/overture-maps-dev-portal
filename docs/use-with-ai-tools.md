@@ -16,7 +16,7 @@ There are three ways to put Overture Maps data in front of an AI assistant, depe
 
 | You want the assistant to… | Use |
 | --- | --- |
-| Answer questions with live Overture data ("find cafes near the Eiffel Tower") | The [MCP server](#mcp-server-claude-cursor-and-other-mcp-clients) |
+| Answer questions with live Overture data ("find cafes near the Eiffel Tower") | The [MCP server](#mcp-server-claude-cursor-and-other-mcp-clients), run locally or [hosted](#hosted-server-chatgpt-claude-connectors-and-other-remote-clients) |
 | Call the API from a custom GPT or an agent framework | The [OpenAPI spec](#openapi-spec-custom-gpts-and-agent-frameworks) |
 | Write code against the API for you | The [docs for AI tools](#docs-for-coding-assistants) |
 
@@ -51,6 +51,22 @@ claude mcp add overture-maps --env OVERTURE_API_KEY=your-api-key -- npx -y @that
 ### Cursor and other MCP clients
 
 Any client that runs local (stdio) MCP servers works the same way. In Cursor, add the `mcpServers` block above to `~/.cursor/mcp.json`. Elsewhere, run `npx -y @thatapicompany/overture-maps-mcp` with `OVERTURE_API_KEY` set in the environment.
+
+### Hosted server (ChatGPT, Claude connectors and other remote clients)
+
+Clients that connect to a remote MCP server by URL, with nothing to install, can use the hosted copy of the same server:
+
+```
+https://mcp.overturemapsapi.com/mcp
+```
+
+Send your API key as an `Authorization: Bearer your-api-key` header or an `x-api-key` header. If the client only accepts a URL, add the key to it: `https://mcp.overturemapsapi.com/mcp?api_key=your-api-key`. Treat that URL like a password. With no key, the server uses the public demo key.
+
+- **Claude:** add a custom connector in Settings and paste the URL.
+- **ChatGPT:** with developer mode on, create a connector from the URL, with no authentication and the key in the URL.
+- **Claude Code:** `claude mcp add --transport http overture-maps https://mcp.overturemapsapi.com/mcp --header "x-api-key: your-api-key"`
+
+The hosted server keeps nothing between requests and calls the API with your key, so your plan's limits apply as usual.
 
 Then ask things like:
 
