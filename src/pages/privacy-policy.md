@@ -28,6 +28,7 @@ title: Privacy Policy
 - To provide the API.
 - To debug and improve the service.
 - Google Analytics on the main website to understand which sections need improvement.
+- A first-party cookie (`om_first`) on the website remembers how you first found us: the referring site's host name, any campaign tags, the first page you opened and the date. If you later create an account, we store that source with the account so we can see which channels lead to sign-ups. It holds nothing else about you and lasts 90 days.
 - Analyze anonymized Place, Brand, and Category lookups to focus improvements and new datasets.
 
 ## Data retention

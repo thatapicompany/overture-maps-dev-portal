@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import Head from '@docusaurus/Head';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import ListPicker from '@site/src/components/ListPage/Picker';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
@@ -189,11 +190,34 @@ function ExplorerPreview() {
   );
 }
 
+// For people who want the data as a file: choose a kind of business and a
+// country, see how many Overture has, and carry the choice into the account
+// app's export form.
+function ListSection() {
+  return (
+    <section className={styles.lists}>
+      <div className="container">
+        <Heading as="h2" className={styles.explorerTitle}>
+          Need a list, not an API?
+        </Heading>
+        <p className={styles.explorerText}>
+          Download every business of one kind in a country as a CSV, with addresses, phone numbers
+          and websites. Check the count and a sample before you download.
+        </p>
+        <ListPicker />
+        <p>
+          <Link to="/business-listings-api">How business lists work</Link>
+        </p>
+      </div>
+    </section>
+  );
+}
+
 export default function Home(): JSX.Element {
   return (
     <Layout
       title={HOMEPAGE_TITLE}
-      description="The hosted Overture Maps API — query billions of places, buildings, addresses and divisions with a simple API key. Open source and self-hostable too.">
+      description="Query Overture Maps places, buildings, addresses and boundaries with one API key, or download business lists as CSV. Free key, no card. Open source, and the data is yours to keep.">
       <Head>
         <title>{HOMEPAGE_TITLE}</title>
         <script type="application/ld+json">{JSON.stringify(STRUCTURED_DATA)}</script>
@@ -201,6 +225,7 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <main>
         <ExplorerPreview />
+        <ListSection />
         <div className="container" style={{ textAlign: 'center', marginTop: '20px' }}>
           <a href="https://overturemaps.org" target="_blank" rel="noopener noreferrer">
             Find out more about the Overture Maps Foundation here...

@@ -100,6 +100,9 @@ const config: Config = {
   // Markdown copies of the docs, llms-full.txt and openapi.json for AI tools.
   plugins: ['./plugins/llms-txt.js'],
 
+  // Remembers the visitor's first source for sign-up attribution.
+  clientModules: ['./src/clientModules/firstTouch.ts'],
+
   themeConfig: {
     redoc: {
       tryItOutEnabled: true, // Enables the "Try it out" button
@@ -133,6 +136,7 @@ const config: Config = {
           position: 'left',
           label: 'Docs & Guides',
         },
+        {to: '/business-listings-api', label: 'Business lists', position: 'left'},
         {to: '/pricing', label: 'Pricing', position: 'left'},
         {to: '/blog', label: 'Blog', position: 'left'},
         {
@@ -167,6 +171,16 @@ const config: Config = {
               label: 'Intro Guide',
               to: '/docs/intro',
             },
+          ],
+        },
+        {
+          title: 'Use cases',
+          items: [
+            {label: 'Business lists', to: '/business-listings-api'},
+            {label: 'Building footprints', to: '/building-footprints-api'},
+            {label: 'POI data API', to: '/poi-data-api'},
+            {label: 'Google Places alternative', to: '/google-places-api-alternative'},
+            {label: 'Use with AI tools', to: '/docs/use-with-ai-tools'},
           ],
         },
         {

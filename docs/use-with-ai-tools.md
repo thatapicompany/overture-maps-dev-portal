@@ -76,6 +76,37 @@ If you're asking Claude, ChatGPT, Copilot or Cursor to write code against the AP
 
 Every endpoint page has a parameter reference and a Python example you can paste into a prompt.
 
+## Prompts to copy
+
+Paste one of these into ChatGPT, Claude, Cursor, Replit or Lovable. Each tells the assistant where the docs are and the rules that most often trip it up.
+
+**Build an app on the API**
+
+```text
+Build [describe your app] using the Overture Maps API.
+Before writing code, read https://www.overturemapsapi.com/llms.txt and the pages it links to.
+Rules:
+- Base URL https://api.overturemapsapi.com. Send the key in the x-api-key header.
+- Keep the key on the server. Never ship it in browser or mobile code.
+- Search places with lat, lng and radius (metres, up to 25000). Use taxonomy for a kind of place; get valid values from GET /places/categories.
+- Page with limit and page (from 0). The total is in the Pagination-Count response header.
+- On a 429, wait for the Retry-After header. Error messages say how to fix the request.
+Use DEMO-API-KEY while building (it works near New York, London, Paris and Bondi Beach), and read the real key from an environment variable called OVERTURE_API_KEY.
+```
+
+**Pull a list**
+
+```text
+Using the Overture Maps API (docs: https://www.overturemapsapi.com/llms-full.txt), write a Python script that saves every [kind of business] within [N] km of [place] to a CSV with name, address, phone, website, latitude and longitude.
+Find the right taxonomy value with GET /places/categories first, read the total from the Pagination-Count header, and page until done. Read the key from OVERTURE_API_KEY.
+```
+
+**Look up a building**
+
+```text
+Using the Overture Maps API (docs: https://www.overturemapsapi.com/docs/guides/get-the-building-footprint-at-a-coordinate.md), write a function that takes a latitude and longitude and returns the footprint polygon, height and floor count of the building at that point, and the nearest address.
+```
+
 ## Tips for good results
 
 - **Ask for a place and a radius.** Searches by `lat`, `lng` and `radius` are the fastest and work on every plan. If you only have a place name, the assistant can look it up with `GET /divisions?name=...` first.
