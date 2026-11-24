@@ -1,0 +1,120 @@
+.page {
+  padding: 2.5rem 0 4rem;
+}
+
+.page h2 {
+  margin-top: 2.5rem;
+}
+
+.crumb {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.lead {
+  font-size: 1.15rem;
+  max-width: 46rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stats div {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.stats strong {
+  display: block;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  color: var(--ifm-color-primary-darker);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.note {
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.table td:nth-child(2),
+.table th:nth-child(2) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.others {
+  columns: 2;
+}
+
+@media (max-width: 600px) {
+  .others {
+    columns: 1;
+  }
+}
+
+.picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.5rem auto 0.5rem;
+}
+
+.picker label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 600;
+  gap: 0.25rem;
+}
+
+.picker select {
+  font: inherit;
+  font-weight: 400;
+  padding: 0.55rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  background: var(--ifm-background-color);
+  color: inherit;
+  min-width: 13rem;
+}
+
+.pickerCount {
+  min-height: 1.6rem;
+  font-size: 1.05rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards li {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.cards strong {
+  display: block;
+  font-size: 1.1rem;
+}

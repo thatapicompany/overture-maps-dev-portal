@@ -47,11 +47,22 @@ Docs & site: https://www.overturemapsapi.com
 
 ## Guides
 
+- Build a business list by category and area (CSV, lead lists): https://www.overturemapsapi.com/docs/guides/build-a-business-list-by-category.md
+- Get the building footprint and address at a coordinate: https://www.overturemapsapi.com/docs/guides/get-the-building-footprint-at-a-coordinate.md
+- Send Overture places to Google Sheets with n8n: https://www.overturemapsapi.com/docs/guides/send-overture-places-to-google-sheets-with-n8n.md
 - Build a local business directory: https://www.overturemapsapi.com/docs/guides/build-a-local-business-directory.md
 - Build a "what's near me" feature: https://www.overturemapsapi.com/docs/guides/build-a-whats-near-me-feature.md
 - Export Overture places to GeoJSON and CSV: https://www.overturemapsapi.com/docs/guides/export-overture-places-to-geojson-and-csv.md
 - Map every location of a retail chain: https://www.overturemapsapi.com/docs/guides/map-every-location-of-a-retail-chain.md
 - Profile a neighbourhood with Overture places data: https://www.overturemapsapi.com/docs/guides/profile-a-neighbourhood.md
+
+## Use cases
+
+- Business lists by category and country, as CSV downloads or through the API: https://www.overturemapsapi.com/business-listings-api
+- Building footprint, height and address for any coordinate: https://www.overturemapsapi.com/building-footprints-api
+- POI data API overview: https://www.overturemapsapi.com/poi-data-api
+- How it compares with the Google Places API (no reviews, ratings, photos or opening hours; open data you can store): https://www.overturemapsapi.com/google-places-api-alternative
+- No-code CSV exports (a brand in a country, categories in a country, everything round a point): https://app.overturemapsapi.com/exports
 
 ## AI tools
 
