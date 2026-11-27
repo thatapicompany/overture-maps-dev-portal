@@ -29,7 +29,7 @@ curl -H "x-api-key: DEMO-API-KEY" -G 'https://api.overturemapsapi.com/places' \
 ## Where Google is the better choice
 
 - **Reviews, ratings and photos.** Overture has none.
-- **Opening hours.** Overture places do not carry them.
+- **Opening hours for every business.** We add [opening hours](/docs/opening-hours) to about 1.8 million places, mostly branches of chains. Google has them for far more, including independents.
 - **Text search and autocomplete across everything.** Our `name_prefix` filter gives type-ahead for place names round a point, which suits a store finder. It is not a general search box for addresses and landmarks.
 - **The newest businesses.** Overture is released monthly and built from contributed sources. A shop that opened last week may not be there yet.
 
@@ -42,7 +42,8 @@ curl -H "x-api-key: DEMO-API-KEY" -G 'https://api.overturemapsapi.com/places' \
 | Brand, with logo and parent company | Yes, for chains matched to Wikidata |
 | Confidence score and operating status | Yes |
 | Stable ID across releases | Yes, the GERS ID |
-| Reviews, ratings, photos, opening hours | No |
+| Opening hours | Yes, for about 1.8 million places, mostly chains ([details](/docs/opening-hours)) |
+| Reviews, ratings, photos | No |
 
 ## Using both
 

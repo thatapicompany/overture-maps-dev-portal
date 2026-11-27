@@ -85,6 +85,16 @@ curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/pla
 
 Logo URLs are Wikimedia Commons links — append `?width=200` for a resized image. Present where Overture links the place's brand to a Wikidata QID (~1.5M places across ~3,000 chains).
 
+### Opening hours
+
+Places with known opening hours return them in `ext_opening_hours`, a string in OpenStreetMap's opening hours syntax. No parameter is needed and the field is on every plan. It is absent when the hours are not known.
+
+```json
+"ext_opening_hours": "Mo-Sa 09:00-20:00; Su 11:00-17:00"
+```
+
+About 1.8 million places have hours, mostly branches of chains. See [Opening hours](../opening-hours) for the format, coverage by country and the source.
+
 ### Contact details (websites, phones, emails, socials)
 
 Every place returns its contact details **by default** — no special parameter is required:

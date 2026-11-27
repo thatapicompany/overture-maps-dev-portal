@@ -18,7 +18,7 @@ If you would rather not write code, the [account app](https://app.overturemapsap
 
 ## What you get
 
-One row per business with its name, category, address, coordinates and Overture's confidence score, plus `phones`, `websites`, `emails` and `socials` where Overture has them. It is the business's public listing. There are no named contacts, reviews or opening hours.
+One row per business with its name, category, address, coordinates and Overture's confidence score, plus `phones`, `websites`, `emails` and `socials` where Overture has them. Branches of chains often carry [opening hours](../opening-hours) in `ext_opening_hours` too. It is the business's public listing. There are no named contacts or reviews.
 
 ## Step 1: find the category
 

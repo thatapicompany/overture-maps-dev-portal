@@ -4,6 +4,10 @@ sidebar_position: 5
 
 # Enriched Responses
 
+:::note
+[Opening hours](./opening-hours) and [brand details](./api-endpoints/places#brand-details-logos-websites-via-wikidata) are included on every plan. This page covers the further joins available on hosted paid plans.
+:::
+
 On the Hosted paid versions you can get access to the wealth of other data we Join onto the Overture Data using the GERS ID.
 
 ## Places
@@ -41,7 +45,6 @@ We have a team continuously updating and improving our enriched data offerings. 
 
 - advanced tags
 - translations / localisation
-- opening hours & dates
 - website
 - footfall (country dependent)
 - photos

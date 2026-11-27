@@ -2903,6 +2903,11 @@
           "ext_brand": {
             "type": "object",
             "description": "Wikidata-sourced brand details (CC0). Present when enrichment_fields includes \"brand\" and the place has a brand with a Wikidata QID."
+          },
+          "ext_opening_hours": {
+            "type": "string",
+            "example": "Mo-Sa 09:00-20:00; Su 11:00-17:00",
+            "description": "Opening hours in OpenStreetMap opening_hours syntax, as published by the business. Absent when not known. Source: All The Places (alltheplaces.xyz). Licence: CC0-1.0."
           }
         },
         "required": [
