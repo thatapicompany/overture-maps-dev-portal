@@ -126,6 +126,14 @@ export default function ListPage({slug}: {slug: string}): JSX.Element {
             website, phone, email and social links where Overture has them. Chains also carry their brand, and often their opening hours.
             You can ask for only the places that have a phone number or a website.
           </p>
+          <p>
+            To see the columns for yourself, open this{' '}
+            <Link to="pathname:///samples/overture-places-sample-london-food-and-drink.csv">
+              sample CSV
+            </Link>
+            : 200 food and drink places round Oxford Circus in London, exactly as the download produces
+            it. 170 have a phone number, 180 a website and 19 opening hours (27 November 2026).
+          </p>
 
           <Heading as="h2">Two ways to get it</Heading>
           <div className="row">
