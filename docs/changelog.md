@@ -2,21 +2,16 @@
 sidebar_position: 2
 title: Changelog
 sidebar_label: Changelog
-description: What's new in the Overture Maps API — new endpoints, fields and filters, plus the Overture data releases that flow through to your queries.
+description: What's new in the Overture Maps API, from new endpoints, fields and filters to the Overture data releases that flow through to your queries.
 ---
 
 # Changelog
 
-What's changed in the Overture Maps API, newest first. This covers **two streams**:
-
-- **API** — new endpoints, fields, filters and behaviour in this API.
-- **Data** — the monthly [Overture Maps data releases](https://docs.overturemaps.org/blog/) that flow through to your query results (new categories, coverage, schema changes). We summarise the parts that affect API callers; the full upstream notes are linked on each entry.
-
-Overture releases roughly monthly (mid-month). New here? Start with the [introduction](./intro).
+What's changed in the Overture Maps API and in the Overture data it serves, newest first. Overture publishes a [data release](https://docs.overturemaps.org/blog/) roughly once a month. New here? Start with the [introduction](./intro).
 
 ---
 
-## November 2026 · API — opening hours
+## 2026-11-27 · API — Opening hours
 
 - **Opening hours on places.** `/places` and `/places/buildings` now return `ext_opening_hours` for about 1.8 million places, mostly branches of chains, in OpenStreetMap's opening hours syntax. It is on every plan with no parameter needed, and absent when the hours are not known. Hours are the ones each business publishes, from the open All The Places project (CC0), refreshed monthly. See [Opening hours](./opening-hours).
 - **New page:** [Data sources and licences](./data-sources) lists where each part of a response comes from.
