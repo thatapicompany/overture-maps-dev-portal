@@ -35,7 +35,9 @@ Full details are on the [places endpoint page](/docs/api-endpoints/places).
 
 Name, category and its place in Overture's taxonomy, address, coordinates, a confidence score, and `websites`, `phones`, `emails` and `socials` where Overture has them. Branded places can carry the brand's logo, website and parent company, which we add by matching Overture to Wikidata. Every place has a GERS ID that stays stable across monthly releases.
 
-There are no reviews, ratings, photos or opening hours. If you need those, [join each place to a Google place ID](/blog/2026/11/05/join-overture-places-to-google-place-ids) and fetch them there for the places that matter.
+About 1.8 million places, mostly branches of chains, also carry [opening hours](/docs/opening-hours).
+
+There are no reviews, ratings or photos. If you need those, [join each place to a Google place ID](/blog/2026/11/05/join-overture-places-to-google-place-ids) and fetch them there for the places that matter.
 
 ## Why open data
 

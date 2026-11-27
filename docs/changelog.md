@@ -16,6 +16,11 @@ Overture releases roughly monthly (mid-month). New here? Start with the [introdu
 
 ---
 
+## November 2026 · API — opening hours
+
+- **Opening hours on places.** `/places` and `/places/buildings` now return `ext_opening_hours` for about 1.8 million places, mostly branches of chains, in OpenStreetMap's opening hours syntax. It is on every plan with no parameter needed, and absent when the hours are not known. Hours are the ones each business publishes, from the open All The Places project (CC0), refreshed monthly. See [Opening hours](./opening-hours).
+- **New page:** [Data sources and licences](./data-sources) lists where each part of a response comes from.
+
 ## 2026-11-18 · Data — Overture `2026-11-18.0` (schema v2.0.0)
 
 - **Places up 2.12% to 90.3M.** BrightQuery grew 6.36% to 16.77M places, Meta 1.60% to 61.27M and Uberall 15.75% to 491,470.

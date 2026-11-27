@@ -41,6 +41,8 @@ Docs & site: https://www.overturemapsapi.com
 - Use with AI tools (MCP server, custom GPTs, coding assistants): https://www.overturemapsapi.com/docs/use-with-ai-tools.md
 - Pagination: https://www.overturemapsapi.com/docs/pagination.md
 - Usage limits: https://www.overturemapsapi.com/docs/limits.md
+- Opening hours on places (ext_opening_hours, OpenStreetMap opening hours syntax, about 1.8 million places, mostly chains): https://www.overturemapsapi.com/docs/opening-hours.md
+- Data sources and licences: https://www.overturemapsapi.com/docs/data-sources.md
 - Enriched responses (brand details): https://www.overturemapsapi.com/docs/enriched-data.md
 - Pricing: https://www.overturemapsapi.com/pricing (Free $0 non-commercial, 100 requests/month; Premium $25/month, 1,000; Growth $50/month, 4,000; Scale $100/month, 10,000; paid plans include a commercial licence and country-level place queries)
 - Explorer (browse the data on a map, copy the API call): https://www.overturemapsapi.com/explorer
@@ -61,7 +63,7 @@ Docs & site: https://www.overturemapsapi.com
 - Business lists by category and country, as CSV downloads or through the API: https://www.overturemapsapi.com/business-listings-api
 - Building footprint, height and address for any coordinate: https://www.overturemapsapi.com/building-footprints-api
 - POI data API overview: https://www.overturemapsapi.com/poi-data-api
-- How it compares with the Google Places API (no reviews, ratings, photos or opening hours; open data you can store): https://www.overturemapsapi.com/google-places-api-alternative
+- How it compares with the Google Places API (no reviews, ratings or photos; opening hours for chains only; open data you can store): https://www.overturemapsapi.com/google-places-api-alternative
 - No-code CSV exports (a brand in a country, categories in a country, everything round a point): https://app.overturemapsapi.com/exports
 
 ## AI tools
