@@ -69,6 +69,14 @@ export default function BusinessListings(): JSX.Element {
             The <Link to="/docs/guides/build-a-business-list-by-category">step-by-step guide</Link> covers
             finding the right category, sizing a list before you pull it, paging, and saving to CSV.
           </p>
+          <p>
+            Want to see a file first? Here is a{' '}
+            <Link to="pathname:///samples/overture-places-sample-london-food-and-drink.csv">
+              sample CSV
+            </Link>
+            : 200 food and drink places round Oxford Circus in London, with every column the download
+            carries. 170 have a phone number, 180 a website and 19 opening hours (27 November 2026).
+          </p>
 
           <Heading as="h2">What to know before you rely on it</Heading>
           <ul>
