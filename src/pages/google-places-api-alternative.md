@@ -47,7 +47,7 @@ curl -H "x-api-key: DEMO-API-KEY" -G 'https://api.overturemapsapi.com/places' \
 
 ## Using both
 
-Many products do not have to choose. Use Overture for the bulk of the work, which is search, lists, maps and your own database, and call Google for the handful of places where a user wants reviews or hours. Our guide to [joining Overture places to Google place IDs](/blog/2026/11/05/join-overture-places-to-google-place-ids) matched 114 of 120 test places in Sydney.
+Many products do not have to choose. Use Overture for the bulk of the work, which is search, lists, maps and your own database, and call Google for the handful of places where a user wants reviews, or hours for a business we do not cover. Our guide to [joining Overture places to Google place IDs](/blog/2026/11/05/join-overture-places-to-google-place-ids) matched 114 of 120 test places in Sydney.
 
 ## Try it on your own area
 

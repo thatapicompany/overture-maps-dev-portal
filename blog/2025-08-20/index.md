@@ -55,7 +55,7 @@ Enriched Data is just the start. We’re already working on:
 
 * **Advanced tags** for more precise categorization and filtering
 * **Translations & localization** for place names and descriptions in multiple languages
-* **Opening hours & dates** including seasonal variations and holiday schedules
+* **Opening hours & dates** including seasonal variations and holiday schedules (update, November 2026: regular [opening hours](/docs/opening-hours) are now included on every plan for about 1.8 million places)
 * **Website URLs** and social media links for businesses
 * **Footfall data** (country dependent) for understanding location traffic patterns
 * **Photos** tied to store fronts, interiors, and POIs

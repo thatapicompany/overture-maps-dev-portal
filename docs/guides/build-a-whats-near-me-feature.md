@@ -143,6 +143,7 @@ export async function nearby(
         distanceM: distanceM(lat, lng, pLat, pLng),
         phone: p.phones?.[0],
         website: p.websites?.[0],
+        hours: p.ext_opening_hours,
         status: p.operating_status,
       };
     })
@@ -214,6 +215,7 @@ Show the radius you ended up using ("within 1.5 km"), so the distances make sens
 ## Going further
 
 - **Search as you type.** Add `name_prefix` for a suggestions box. With `lat`/`lng` it also returns nearest first. See [By Partial Name](../api-endpoints/places#by-partial-name-type-ahead).
+- **Open now.** Places with known [opening hours](../opening-hours) carry them in `ext_opening_hours`, which the code above keeps as `hours`. The [`opening_hours`](https://www.npmjs.com/package/opening_hours) package answers whether a place is open: `new OpeningHours(place.hours).getState()`. Hours are present mostly for chains, so show "open now" as a badge where you have it and do not hide places without it.
 - **Brand logos.** Add `enrichment_fields=brand` to get logos and official websites for chains. See [Build a local business directory](./build-a-local-business-directory).
 - **Put it on a map.** Add `format=geojson` and hand the response straight to MapLibre, Leaflet or Mapbox. [Map every location of a retail chain](./map-every-location-of-a-retail-chain) shows the Leaflet version.
 - **More results.** Page through with `limit` and `page`. See [Pagination](/docs/pagination).

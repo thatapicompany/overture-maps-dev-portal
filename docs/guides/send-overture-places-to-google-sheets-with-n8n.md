@@ -69,6 +69,7 @@ The API returns each place as a GeoJSON feature. Add an **Edit Fields (Set)** no
 | `postcode` | `{{ $json.properties.addresses[0]?.postcode }}` |
 | `phone` | `{{ $json.properties.phones?.[0] }}` |
 | `website` | `{{ $json.properties.websites?.[0] }}` |
+| `opening_hours` | `{{ $json.properties.ext_opening_hours }}` |
 | `confidence` | `{{ $json.properties.confidence }}` |
 | `longitude` | `{{ $json.geometry.coordinates[0] }}` |
 | `latitude` | `{{ $json.geometry.coordinates[1] }}` |
