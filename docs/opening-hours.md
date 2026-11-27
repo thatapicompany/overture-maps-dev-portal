@@ -21,6 +21,13 @@ Overture places do not carry opening hours, so we add them. Where we know a plac
 
 When we do not know a place's hours the field is absent. Absent does not mean closed. For that, use [`operating_status`](./api-endpoints/places#operating-status).
 
+If you use `includes` to trim the response, add `ext_opening_hours` to the list. `includes` returns only the properties you name, so the hours are dropped otherwise:
+
+```bash
+curl -H "x-api-key: DEMO-API-KEY" -G 'https://api.overturemapsapi.com/places' \
+-d 'lat=51.5145' -d 'lng=-0.1420' -d 'radius=500' -d 'includes=names,addresses,ext_opening_hours'
+```
+
 ## Format
 
 The value is a string in OpenStreetMap's [opening hours syntax](https://wiki.openstreetmap.org/wiki/Key:opening_hours/specification), the same format Overture's own schema uses for time restrictions. Times are local to the place.
@@ -45,6 +52,8 @@ const hours = new OpeningHours(place.properties.ext_opening_hours);
 hours.getState();        // true if open now
 hours.getNextChange();   // Date of the next opening or closing
 ```
+
+`getState()` uses the clock of the machine running it. For a place in another time zone, pass it the time there.
 
 ## Coverage
 

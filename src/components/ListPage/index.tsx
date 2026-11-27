@@ -123,7 +123,7 @@ export default function ListPage({slug}: {slug: string}): JSX.Element {
           <Heading as="h2">What each row holds</Heading>
           <p>
             Name, category, street address, town, region, postcode, country, latitude and longitude, plus
-            website, phone, email and social links where Overture has them. Chains also carry their brand.
+            website, phone, email and social links where Overture has them. Chains also carry their brand, and often their opening hours.
             You can ask for only the places that have a phone number or a website.
           </p>
 

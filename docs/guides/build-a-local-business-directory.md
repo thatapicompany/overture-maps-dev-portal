@@ -42,6 +42,8 @@ Contact details come back **by default** — you do not need any special paramet
 A common early mistake is adding `website` or `phone` to `enrichment_fields`. That parameter is **only** for the Wikidata brand layer (Step 5). The `websites`, `phones`, `emails` and `socials` arrays are always in the response when Overture has them.
 :::
 
+Branches of chains often carry [opening hours](../opening-hours) too, in `ext_opening_hours`. Independent businesses mostly do not yet.
+
 Coverage varies by country and category. In well-mapped markets, websites and phones are populated for the large majority of businesses; emails and socials are thinner. In smaller territories the total number of places is lower, so expect a shorter long tail.
 
 ## Step 3 — Keep only businesses you can verify

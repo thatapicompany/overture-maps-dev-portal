@@ -143,6 +143,23 @@ For chains, add **`enrichment_fields=brand`** to pull the brand's logo, official
 
 Not every brand has a Wikidata match, so `ext_brand` only appears when Overture can resolve one — handy for badging the map with the official logo, or filling in the brand's canonical website. See [Build a local business directory](./build-a-local-business-directory) for more on the enrichment layer.
 
+## Step 6 — Show opening hours (optional)
+
+Chains are where [opening hours](../opening-hours) are most complete: worldwide, 46% of the places Overture marks with a brand have them (measured 27 November 2026). They arrive in `ext_opening_hours` with no extra parameter:
+
+```json
+"ext_opening_hours": "Mo-Sa 06:30-18:00; Su 08:00-16:00"
+```
+
+Add them to the popup, and check the field is present first, since not every branch has it:
+
+```js
+L.geoJSON(data).bindPopup((l) => {
+  const p = l.feature.properties;
+  return [p.names?.primary, p.ext_opening_hours].filter(Boolean).join("<br>");
+}).addTo(map);
+```
+
 ## Tips
 
 - **`brand_name` vs `brand_wikidata`**: `brand_name` is the simple, readable filter; `brand_wikidata` pins to the exact brand entity when a name is ambiguous.

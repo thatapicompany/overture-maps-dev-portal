@@ -86,7 +86,8 @@ export default function BusinessListings(): JSX.Element {
             </li>
             <li>
               <strong>It is business data, not people data.</strong> You get the business&apos;s public
-              listing. There are no named contacts, reviews, ratings or photos.
+              listing. Branches of chains often carry <Link to="/docs/opening-hours">opening hours</Link>. There are no
+              named contacts, reviews, ratings or photos.
             </li>
             <li>
               <strong>Country-wide lists need a paid plan</strong>, from $25 a month. The Free plan

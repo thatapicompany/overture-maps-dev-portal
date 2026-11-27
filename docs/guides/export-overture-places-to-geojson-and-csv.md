@@ -114,6 +114,8 @@ curl -H "x-api-key: DEMO-API-KEY" -X GET -G 'https://api.overturemapsapi.com/pla
 -d 'format=geojson' -d 'limit=25' -d 'includes=names,taxonomy,addresses,websites,phones'
 ```
 
+To keep [opening hours](../opening-hours) in the export, add `ext_opening_hours` to the list. They are present mostly for branches of chains.
+
 For this first page of 25 bakeries, the response drops from 31,022 bytes to 12,895. Each feature keeps its `id` and `geometry`. Properties with no value are left out, so don't assume every key is present.
 
 ## Step 4: Write GeoJSON and CSV files
