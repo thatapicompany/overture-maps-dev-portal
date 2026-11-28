@@ -214,8 +214,8 @@ Generated from the [OpenAPI spec](https://api.overturemapsapi.com/api-docs.json)
 | `source` | string |  | Filter places to only those with a source dataset matching this value. |
 | `brand_wikidata` | string |  | Wikidata brand ID associated with the place. |
 | `brand_name` | string |  | Brand name associated with the place. |
-| `name` | string |  | Filter by the place's own name — an additional filter on top of lat/lng/radius (or country) search, not a standalone text search. Case-insensitive exact match against names.primary or any localized value in names.common. |
-| `name_prefix` | string |  | Partial-name search for type-ahead: matches places whose primary name starts with this text, or has a word that does (so "blue bo" and "bottle" both match "Blue Bottle Coffee"). Case-insensitive, at least 2 characters. Combine with lat/lng/radius and a small limit: results come nearest first. |
+| `name` | string |  | Filter by the place's own name: an additional filter on top of lat/lng/radius (or country) search, not a standalone text search. Exact match against names.primary or any localized value in names.common, ignoring case and accents ("cafe" matches "Café"). |
+| `name_prefix` | string |  | Partial-name search for type-ahead: matches places whose primary name starts with this text, or has a word that does (so "blue bo" and "bottle" both match "Blue Bottle Coffee"). Ignores case and accents ("sao" matches "São Paulo"), at least 2 characters. Combine with lat/lng/radius and a small limit: results come nearest first. |
 | `min_confidence` | number | `0.5` | Minimum confidence score for the places to be returned, defaulting to 0.5 if not provided. |
 | `categories` | string |  | Array of category names, provided as a comma-separated string. Matches the legacy Overture categories vocabulary and the newer taxonomy/basic_category vocabulary. |
 | `taxonomy` | string |  | Array of Overture taxonomy categories, provided as a comma-separated string. Matches the primary category or any ancestor in the taxonomy hierarchy, so e.g. "food_and_drink" matches every descendant category. |
